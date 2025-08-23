@@ -31,7 +31,7 @@ try {
 
   // Build the main application bundle
   execSync(
-    "npx esbuild src/main.tsx --bundle --outfile=dist/assets/index.js --format=esm --target=es2020 --minify --loader:.css=css --loader:.tsx=tsx --loader:.ts=ts --jsx=automatic --jsx-import-source=react --external:react --external:react-dom",
+    "npx esbuild src/main.tsx --bundle --outfile=dist/assets/index.js --format=esm --target=es2020 --minify --loader:.css=css --loader:.tsx=tsx --loader:.ts=ts --jsx=automatic --jsx-import-source=react",
     {
       stdio: "inherit",
     }
