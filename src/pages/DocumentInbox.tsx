@@ -92,17 +92,17 @@ const DocumentInbox = () => {
     <div className="space-y-4 sm:space-y-6">
       <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
         <div>
-          <h1 className="text-2xl sm:text-3xl font-bold text-gray-900">
+          <h1 className="text-2xl sm:text-3xl font-bold text-gray-900 dark:text-white">
             Document Inbox
           </h1>
-          <p className="text-gray-600 mt-1 text-sm sm:text-base">
+          <p className="text-gray-600 dark:text-gray-400 mt-1 text-sm sm:text-base">
             Manage incoming email documents and attachments
           </p>
         </div>
       </div>
 
       {/* Filters */}
-      <Card className="bg-white border border-gray-200">
+      <Card className="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700">
         <CardContent className="p-4">
           <div className="flex flex-col sm:flex-row gap-4">
             <div className="flex-1">
@@ -133,7 +133,7 @@ const DocumentInbox = () => {
       </Card>
 
       {/* Email Table */}
-      <Card className="bg-white border border-gray-200">
+      <Card className="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700">
         <CardHeader>
           <CardTitle className="flex items-center gap-2">
             <Inbox className="h-5 w-5" />
@@ -143,60 +143,60 @@ const DocumentInbox = () => {
         <CardContent className="overflow-x-auto">
           <Table>
             <TableHeader>
-              <TableRow className="border-gray-200">
-                <TableHead className="font-semibold text-gray-700">
-                  Email Subject
-                </TableHead>
-                <TableHead className="font-semibold text-gray-700 hidden sm:table-cell">
-                  Sender
-                </TableHead>
-                <TableHead className="font-semibold text-gray-700">
-                  Attachments
-                </TableHead>
-                <TableHead className="font-semibold text-gray-700">
-                  Status
-                </TableHead>
-                <TableHead className="font-semibold text-gray-700">
-                  Date
-                </TableHead>
-                <TableHead className="font-semibold text-gray-700">
-                  Actions
-                </TableHead>
-              </TableRow>
+                              <TableRow className="border-gray-200 dark:border-gray-700">
+                  <TableHead className="font-semibold text-gray-700 dark:text-gray-300">
+                    Email Subject
+                  </TableHead>
+                  <TableHead className="font-semibold text-gray-700 dark:text-gray-300 hidden sm:table-cell">
+                    Sender
+                  </TableHead>
+                  <TableHead className="font-semibold text-gray-700 dark:text-gray-300">
+                    Attachments
+                  </TableHead>
+                  <TableHead className="font-semibold text-gray-700 dark:text-gray-300">
+                    Status
+                  </TableHead>
+                  <TableHead className="font-semibold text-gray-700 dark:text-gray-300">
+                    Date
+                  </TableHead>
+                  <TableHead className="font-semibold text-gray-700 dark:text-gray-300">
+                    Actions
+                  </TableHead>
+                </TableRow>
             </TableHeader>
             <TableBody>
               {filteredEmails.map((email) => (
                 <TableRow
                   key={email.id}
-                  className="border-gray-100 hover:bg-gray-50"
+                  className="border-gray-100 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-700"
                 >
-                  <TableCell className="font-medium text-gray-900 max-w-xs truncate">
+                  <TableCell className="font-medium text-gray-900 dark:text-white max-w-xs truncate">
                     <div className="flex flex-col">
                       <span className="truncate">{email.subject}</span>
-                      <span className="text-xs text-gray-500 sm:hidden">
+                      <span className="text-xs text-gray-500 dark:text-gray-400 sm:hidden">
                         {email.sender}
                       </span>
                     </div>
                   </TableCell>
-                  <TableCell className="text-gray-600 hidden sm:table-cell">
+                  <TableCell className="text-gray-600 dark:text-gray-400 hidden sm:table-cell">
                     {email.sender}
                   </TableCell>
                   <TableCell>
                     <div className="flex items-center gap-1">
-                      <Paperclip className="h-4 w-4 text-gray-400" />
-                      <span className="text-sm text-gray-600">
+                      <Paperclip className="h-4 w-4 text-gray-400 dark:text-gray-500" />
+                      <span className="text-sm text-gray-600 dark:text-gray-400">
                         {email.attachments.length} file
                         {email.attachments.length > 1 ? "s" : ""}
                       </span>
                     </div>
-                    <div className="text-xs text-gray-500 mt-1 hidden sm:block">
+                    <div className="text-xs text-gray-500 dark:text-gray-400 mt-1 hidden sm:block">
                       {email.attachments.join(", ")}
                     </div>
                   </TableCell>
                   <TableCell>
                     <Badge className={email.statusColor}>{email.status}</Badge>
                   </TableCell>
-                  <TableCell className="text-gray-600">{email.date}</TableCell>
+                  <TableCell className="text-gray-600 dark:text-gray-400">{email.date}</TableCell>
                   <TableCell>
                     <div className="flex gap-2">
                       <Button
