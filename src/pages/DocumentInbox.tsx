@@ -77,10 +77,18 @@ const DocumentInbox = () => {
                 </SelectTrigger>
                 <SelectContent>
                   <SelectItem value="all">{t("common.allStatus")}</SelectItem>
-                  <SelectItem value="processed">{t("documentInbox.filters.processed")}</SelectItem>
-                  <SelectItem value="pending">{t("documentInbox.filters.pending")}</SelectItem>
-                  <SelectItem value="review">{t("documentInbox.filters.reviewRequired")}</SelectItem>
-                  <SelectItem value="error">{t("documentInbox.filters.error")}</SelectItem>
+                  <SelectItem value="processed">
+                    {t("documentInbox.filters.processed")}
+                  </SelectItem>
+                  <SelectItem value="pending">
+                    {t("documentInbox.filters.pending")}
+                  </SelectItem>
+                  <SelectItem value="review">
+                    {t("documentInbox.filters.reviewRequired")}
+                  </SelectItem>
+                  <SelectItem value="error">
+                    {t("documentInbox.filters.error")}
+                  </SelectItem>
                 </SelectContent>
               </Select>
             </div>

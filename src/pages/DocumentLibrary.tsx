@@ -96,11 +96,21 @@ const DocumentLibrary = () => {
                 </SelectTrigger>
                 <SelectContent>
                   <SelectItem value="all">{t("common.allTypes")}</SelectItem>
-                  <SelectItem value="Invoice">{t("documentTypes.invoice")}</SelectItem>
-                  <SelectItem value="Certificate">{t("documentTypes.certificate")}</SelectItem>
-                  <SelectItem value="Bill of Lading">{t("documentTypes.billOfLading")}</SelectItem>
-                  <SelectItem value="Packing List">{t("documentTypes.packingList")}</SelectItem>
-                                      <SelectItem value="Customs">{t("documentTypes.customs")}</SelectItem>
+                  <SelectItem value="Invoice">
+                    {t("documentTypes.invoice")}
+                  </SelectItem>
+                  <SelectItem value="Certificate">
+                    {t("documentTypes.certificate")}
+                  </SelectItem>
+                  <SelectItem value="Bill of Lading">
+                    {t("documentTypes.billOfLading")}
+                  </SelectItem>
+                  <SelectItem value="Packing List">
+                    {t("documentTypes.packingList")}
+                  </SelectItem>
+                  <SelectItem value="Customs">
+                    {t("documentTypes.customs")}
+                  </SelectItem>
                 </SelectContent>
               </Select>
               <Select value={statusFilter} onValueChange={setStatusFilter}>
@@ -109,10 +119,18 @@ const DocumentLibrary = () => {
                 </SelectTrigger>
                 <SelectContent>
                   <SelectItem value="all">{t("common.allStatus")}</SelectItem>
-                  <SelectItem value="approved">{t("documentLibrary.filters.approved")}</SelectItem>
-                  <SelectItem value="verified">{t("documentLibrary.filters.verified")}</SelectItem>
-                  <SelectItem value="processed">{t("documentLibrary.filters.processed")}</SelectItem>
-                  <SelectItem value="archived">{t("documentLibrary.filters.archived")}</SelectItem>
+                  <SelectItem value="approved">
+                    {t("documentLibrary.filters.approved")}
+                  </SelectItem>
+                  <SelectItem value="verified">
+                    {t("documentLibrary.filters.verified")}
+                  </SelectItem>
+                  <SelectItem value="processed">
+                    {t("documentLibrary.filters.processed")}
+                  </SelectItem>
+                  <SelectItem value="archived">
+                    {t("documentLibrary.filters.archived")}
+                  </SelectItem>
                 </SelectContent>
               </Select>
             </div>
@@ -125,7 +143,8 @@ const DocumentLibrary = () => {
         <CardHeader>
           <CardTitle className="flex items-center gap-2">
             <Library className="h-5 w-5" />
-            {t("documentLibrary.documentArchive")} ({filteredDocuments.length} {t("settings.documents")})
+            {t("documentLibrary.documentArchive")} ({filteredDocuments.length}{" "}
+            {t("settings.documents")})
           </CardTitle>
         </CardHeader>
         <CardContent className="overflow-x-auto">
