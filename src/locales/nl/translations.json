@@ -1,0 +1,166 @@
+{
+  "common": {
+    "dashboard": "Dashboard",
+    "documentInbox": "Documenten Inbox",
+    "documentLibrary": "Documenten Bibliotheek",
+    "settings": "Instellingen",
+    "search": "Zoeken",
+    "searchDocuments": "Zoek documenten...",
+    "searchBySubject": "Zoek op onderwerp of afzender...",
+    "searchByFilename": "Zoek op bestandsnaam, tag of contact...",
+    "allStatus": "Alle Statussen",
+    "allTypes": "Alle Typen",
+    "actions": "Acties",
+    "view": "Bekijken",
+    "download": "Downloaden",
+    "edit": "Bewerken",
+    "delete": "Verwijderen",
+    "save": "Opslaan",
+    "cancel": "Annuleren",
+    "add": "Toevoegen",
+    "back": "Terug",
+    "next": "Volgende",
+    "previous": "Vorige",
+    "close": "Sluiten",
+    "open": "Openen",
+    "loading": "Laden...",
+    "error": "Fout",
+    "success": "Succes",
+    "warning": "Waarschuwing",
+    "info": "Informatie"
+  },
+  "dashboard": {
+    "title": "Dashboard",
+    "welcome": "Welkom terug, Sarah. Hier is je overzicht van agrarische logistiek.",
+    "stats": {
+      "processedToday": "Vandaag Verwerkt",
+      "pendingReview": "In Afwachting",
+      "autoClassified": "Auto-Geklassificeerd",
+      "errors": "Fouten"
+    },
+    "recentActivity": "Recente Activiteit",
+    "documentName": "Document",
+    "type": "Type",
+    "status": "Status",
+    "dateReceived": "Datum"
+  },
+  "documentInbox": {
+    "title": "Documenten Inbox",
+    "description": "Beheer binnenkomende e-maildocumenten en bijlagen",
+    "emailDocuments": "E-mail Documenten",
+    "emailSubject": "E-mail Onderwerp",
+    "sender": "Afzender",
+    "attachments": "Bijlagen",
+    "date": "Datum",
+    "filters": {
+      "processed": "Verwerkt",
+      "pending": "In Afwachting",
+      "reviewRequired": "Beoordeling Vereist",
+      "error": "Fout"
+    }
+  },
+  "documentLibrary": {
+    "title": "Documenten Bibliotheek",
+    "description": "Zoek en beheer je gearchiveerde documenten",
+    "documentArchive": "Documenten Archief",
+    "name": "Naam",
+    "type": "Type",
+    "tags": "Tags",
+    "contact": "Contact",
+    "date": "Datum",
+    "status": "Status",
+    "filters": {
+      "approved": "Goedgekeurd",
+      "verified": "Geverifieerd",
+      "processed": "Verwerkt",
+      "archived": "Gearchiveerd"
+    }
+  },
+  "documentReview": {
+    "title": "Document Beoordeling",
+    "description": "Beoordeel en valideer document metadata",
+    "backToInbox": "Terug naar Inbox",
+    "documentPreview": "Document Voorvertoning",
+    "extractedMetadata": "Geëxtraheerde Metadata",
+    "aiProcessed": "AI Verwerkt",
+    "documentType": "Document Type",
+    "shipper": "Verzender",
+    "consignee": "Geadresseerde",
+    "date": "Datum",
+    "vesselName": "Schip Naam",
+    "portOfLoading": "Laadhaven",
+    "portOfDischarge": "Loshaven",
+    "confidence": "Betrouwbaarheid",
+    "approve": "Goedkeuren",
+    "flag": "Markeren",
+    "saveChanges": "Wijzigingen Opslaan",
+    "pdfPreview": "PDF voorvertoning zou hier verschijnen",
+    "openFullDocument": "Volledig Document Openen"
+  },
+  "settings": {
+    "title": "Instellingen",
+    "description": "Beheer tags en document classificatie instellingen",
+    "tagManagement": "Tag Beheer",
+    "addNewTag": "Nieuwe Tag Toevoegen",
+    "tagName": "Tag Naam",
+    "tagType": "Type",
+    "tagDescription": "Beschrijving",
+    "usageCount": "Gebruik Aantal",
+    "documents": "documenten",
+    "systemConfiguration": "Systeem Configuratie",
+    "autoClassification": "Auto-Classificatie",
+    "emailProcessing": "E-mail Verwerking",
+    "minimumConfidenceThreshold": "Minimale Betrouwbaarheidsdrempel",
+    "autoApproveHighConfidence": "Auto-goedkeuren Hoge Betrouwbaarheid",
+    "flagLowConfidence": "Markeren Lage Betrouwbaarheid",
+    "checkFrequency": "Controle Frequentie",
+    "attachmentSizeLimit": "Bijlage Grootte Limiet",
+    "supportedFormats": "Ondersteunde Formaten",
+    "saveConfiguration": "Configuratie Opslaan",
+    "resetToDefaults": "Terugzetten naar Standaard",
+    "enabled": "Ingeschakeld",
+    "below70": "Onder 70%",
+    "every5Minutes": "Elke 5 minuten",
+    "25MB": "25 MB",
+    "pdfDocDocx": "PDF, DOC, DOCX"
+  },
+  "documentTypes": {
+    "billOfLading": "Conossement",
+    "invoice": "Factuur",
+    "certificate": "Certificaat",
+    "packingList": "Pakbon",
+    "customs": "Douane",
+    "organicCertificate": "Biologisch Certificaat",
+    "phytosanitaryCertificate": "Fytosanitair Certificaat"
+  },
+  "statuses": {
+    "processed": "Verwerkt",
+    "pendingReview": "In Afwachting van Beoordeling",
+    "reviewRequired": "Beoordeling Vereist",
+    "error": "Fout",
+    "approved": "Goedgekeurd",
+    "verified": "Geverifieerd",
+    "archived": "Gearchiveerd",
+    "cleared": "Vrijgegeven"
+  },
+  "tagTypes": {
+    "certification": "Certificering",
+    "operational": "Operationeel",
+    "priority": "Prioriteit",
+    "transport": "Transport",
+    "compliance": "Compliance"
+  },
+  "company": {
+    "name": "AgriFlow",
+    "tagline": "Agrarische Logistiek"
+  },
+  "user": {
+    "name": "Sarah Chen",
+    "profile": "Profiel",
+    "logout": "Uitloggen"
+  },
+  "notifications": {
+    "title": "Meldingen",
+    "unread": "ongelezen"
+  }
+}

@@ -1,0 +1,166 @@
+{
+  "common": {
+    "dashboard": "Dashboard",
+    "documentInbox": "Document Inbox",
+    "documentLibrary": "Document Library",
+    "settings": "Settings",
+    "search": "Search",
+    "searchDocuments": "Search documents...",
+    "searchBySubject": "Search by subject or sender...",
+    "searchByFilename": "Search by filename, tag, or contact...",
+    "allStatus": "All Status",
+    "allTypes": "All Types",
+    "actions": "Actions",
+    "view": "View",
+    "download": "Download",
+    "edit": "Edit",
+    "delete": "Delete",
+    "save": "Save",
+    "cancel": "Cancel",
+    "add": "Add",
+    "back": "Back",
+    "next": "Next",
+    "previous": "Previous",
+    "close": "Close",
+    "open": "Open",
+    "loading": "Loading...",
+    "error": "Error",
+    "success": "Success",
+    "warning": "Warning",
+    "info": "Information"
+  },
+  "dashboard": {
+    "title": "Dashboard",
+    "welcome": "Welcome back, Sarah. Here's your agricultural logistics overview.",
+    "stats": {
+      "processedToday": "Processed Today",
+      "pendingReview": "Pending Review",
+      "autoClassified": "Auto-Classified",
+      "errors": "Errors"
+    },
+    "recentActivity": "Recent Activity",
+    "documentName": "Document",
+    "type": "Type",
+    "status": "Status",
+    "dateReceived": "Date"
+  },
+  "documentInbox": {
+    "title": "Document Inbox",
+    "description": "Manage incoming email documents and attachments",
+    "emailDocuments": "Email Documents",
+    "emailSubject": "Email Subject",
+    "sender": "Sender",
+    "attachments": "Attachments",
+    "date": "Date",
+    "filters": {
+      "processed": "Processed",
+      "pending": "Pending",
+      "reviewRequired": "Review Required",
+      "error": "Error"
+    }
+  },
+  "documentLibrary": {
+    "title": "Document Library",
+    "description": "Search and manage your archived documents",
+    "documentArchive": "Document Archive",
+    "name": "Name",
+    "type": "Type",
+    "tags": "Tags",
+    "contact": "Contact",
+    "date": "Date",
+    "status": "Status",
+    "filters": {
+      "approved": "Approved",
+      "verified": "Verified",
+      "processed": "Processed",
+      "archived": "Archived"
+    }
+  },
+  "documentReview": {
+    "title": "Document Review",
+    "description": "Review and validate document metadata",
+    "backToInbox": "Back to Inbox",
+    "documentPreview": "Document Preview",
+    "extractedMetadata": "Extracted Metadata",
+    "aiProcessed": "AI Processed",
+    "documentType": "Document Type",
+    "shipper": "Shipper",
+    "consignee": "Consignee",
+    "date": "Date",
+    "vesselName": "Vessel Name",
+    "portOfLoading": "Port of Loading",
+    "portOfDischarge": "Port of Discharge",
+    "confidence": "Confidence",
+    "approve": "Approve",
+    "flag": "Flag",
+    "saveChanges": "Save Changes",
+    "pdfPreview": "PDF preview would appear here",
+    "openFullDocument": "Open Full Document"
+  },
+  "settings": {
+    "title": "Settings",
+    "description": "Manage tags and document classification settings",
+    "tagManagement": "Tag Management",
+    "addNewTag": "Add New Tag",
+    "tagName": "Tag Name",
+    "tagType": "Type",
+    "tagDescription": "Description",
+    "usageCount": "Usage Count",
+    "documents": "documents",
+    "systemConfiguration": "System Configuration",
+    "autoClassification": "Auto-Classification",
+    "emailProcessing": "Email Processing",
+    "minimumConfidenceThreshold": "Minimum Confidence Threshold",
+    "autoApproveHighConfidence": "Auto-approve High Confidence",
+    "flagLowConfidence": "Flag Low Confidence",
+    "checkFrequency": "Check Frequency",
+    "attachmentSizeLimit": "Attachment Size Limit",
+    "supportedFormats": "Supported Formats",
+    "saveConfiguration": "Save Configuration",
+    "resetToDefaults": "Reset to Defaults",
+    "enabled": "Enabled",
+    "below70": "Below 70%",
+    "every5Minutes": "Every 5 minutes",
+    "25MB": "25 MB",
+    "pdfDocDocx": "PDF, DOC, DOCX"
+  },
+  "documentTypes": {
+    "billOfLading": "Bill of Lading",
+    "invoice": "Invoice",
+    "certificate": "Certificate",
+    "packingList": "Packing List",
+    "customs": "Customs",
+    "organicCertificate": "Organic Certificate",
+    "phytosanitaryCertificate": "Phytosanitary Certificate"
+  },
+  "statuses": {
+    "processed": "Processed",
+    "pendingReview": "Pending Review",
+    "reviewRequired": "Review Required",
+    "error": "Error",
+    "approved": "Approved",
+    "verified": "Verified",
+    "archived": "Archived",
+    "cleared": "Cleared"
+  },
+  "tagTypes": {
+    "certification": "Certification",
+    "operational": "Operational",
+    "priority": "Priority",
+    "transport": "Transport",
+    "compliance": "Compliance"
+  },
+  "company": {
+    "name": "AgriFlow",
+    "tagline": "Agricultural Logistics"
+  },
+  "user": {
+    "name": "Sarah Chen",
+    "profile": "Profile",
+    "logout": "Logout"
+  },
+  "notifications": {
+    "title": "Notifications",
+    "unread": "unread"
+  }
+}
