@@ -1,8 +1,8 @@
 {
-  "buildCommand": "npm run build",
+  "buildCommand": "rm -rf node_modules package-lock.json && npm install --omit=optional && npm run build:vercel",
   "outputDirectory": "dist",
   "framework": "vite",
-  "installCommand": "npm install --omit=optional",
+  "installCommand": "npm install --omit=optional --no-optional",
   "devCommand": "npm run dev",
   "functions": {
     "app/api/**/*.ts": {
@@ -10,6 +10,7 @@
     }
   },
   "env": {
-    "NODE_ENV": "production"
+    "NODE_ENV": "production",
+    "DISABLE_ROLLUP_NATIVE": "true"
   }
 }
