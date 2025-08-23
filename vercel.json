@@ -4,13 +4,14 @@
   "framework": "vite",
   "installCommand": "npm install --omit=optional --no-optional",
   "devCommand": "npm run dev",
-  "functions": {
-    "app/api/**/*.ts": {
-      "runtime": "nodejs18.x"
-    }
-  },
   "env": {
     "NODE_ENV": "production",
     "DISABLE_ROLLUP_NATIVE": "true"
-  }
+  },
+  "rewrites": [
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
+    }
+  ]
 }
