@@ -1,8 +1,8 @@
 {
   "common": {
     "dashboard": "Dashboard",
-    "documentInbox": "Document Inbox",
-    "documentLibrary": "Document Library",
+    "documentinbox": "Document Inbox",
+    "documentlibrary": "Document Library",
     "settings": "Settings",
     "search": "Search",
     "searchDocuments": "Search documents...",
@@ -33,9 +33,9 @@
     "title": "Dashboard",
     "welcome": "Welcome back, Sarah. Here's your agricultural logistics overview.",
     "stats": {
-      "processedToday": "Processed Today",
-      "pendingReview": "Pending Review",
-      "autoClassified": "Auto-Classified",
+      "processedtoday": "Processed Today",
+      "pendingreview": "Pending Review",
+      "autoclassified": "Auto-Classified",
       "errors": "Errors"
     },
     "recentActivity": "Recent Activity",

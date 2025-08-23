@@ -68,6 +68,9 @@ export const AppProvider: React.FC<AppProviderProps> = ({ children }) => {
     
     // Save to localStorage
     localStorage.setItem("language", language);
+    
+    // Force a re-render by updating the document title (this is a simple way to trigger re-renders)
+    document.title = `AgriFlow Document Hub - ${language.toUpperCase()}`;
   }, [language]);
 
   const toggleTheme = () => {

@@ -1,16 +1,29 @@
-import { useCallback } from "react";
+import { useCallback, useMemo } from "react";
 import { useApp } from "@/contexts/AppContext";
 import { i18n } from "@/services/i18n";
 
 export const useTranslation = () => {
   const { language } = useApp();
 
-  const t = useCallback((key: string): string => {
-    return i18n.t(key);
+  // Create a memoized translation function that depends on language
+  const t = useMemo(() => {
+    return (key: string): string => {
+      // Ensure i18n service is using the current language
+      if (i18n.getLanguage() !== language) {
+        i18n.setLanguage(language);
+      }
+      return i18n.t(key);
+    };
   }, [language]);
 
-  const getNestedTranslation = useCallback((path: string): any => {
-    return i18n.getNestedTranslation(path);
+  const getNestedTranslation = useMemo(() => {
+    return (path: string): any => {
+      // Ensure i18n service is using the current language
+      if (i18n.getLanguage() !== language) {
+        i18n.setLanguage(language);
+      }
+      return i18n.getNestedTranslation(path);
+    };
   }, [language]);
 
   return {

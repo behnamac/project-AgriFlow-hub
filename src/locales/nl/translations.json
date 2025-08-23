@@ -1,8 +1,8 @@
 {
   "common": {
     "dashboard": "Dashboard",
-    "documentInbox": "Documenten Inbox",
-    "documentLibrary": "Documenten Bibliotheek",
+    "documentinbox": "Documenten Inbox",
+    "documentlibrary": "Documenten Bibliotheek",
     "settings": "Instellingen",
     "search": "Zoeken",
     "searchDocuments": "Zoek documenten...",
@@ -33,9 +33,9 @@
     "title": "Dashboard",
     "welcome": "Welkom terug, Sarah. Hier is je overzicht van agrarische logistiek.",
     "stats": {
-      "processedToday": "Vandaag Verwerkt",
-      "pendingReview": "In Afwachting",
-      "autoClassified": "Auto-Geklassificeerd",
+      "processedtoday": "Vandaag Verwerkt",
+      "pendingreview": "In Afwachting",
+      "autoclassified": "Auto-Geklassificeerd",
       "errors": "Fouten"
     },
     "recentActivity": "Recente Activiteit",
