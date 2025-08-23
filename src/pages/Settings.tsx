@@ -61,7 +61,10 @@ const Settings = () => {
 
     toast({
       title: t("documentReview.tagAdded"),
-      description: t("documentReview.tagAddedSuccess").replace("{name}", newTag.name),
+      description: t("documentReview.tagAddedSuccess").replace(
+        "{name}",
+        newTag.name
+      ),
     });
 
     setNewTag({ name: "", type: "", description: "" });
@@ -71,7 +74,10 @@ const Settings = () => {
   const handleDeleteTag = (tagName: string) => {
     toast({
       title: t("documentReview.tagDeleted"),
-      description: t("documentReview.tagDeletedSuccess").replace("{name}", tagName),
+      description: t("documentReview.tagDeletedSuccess").replace(
+        "{name}",
+        tagName
+      ),
       variant: "destructive",
     });
   };
@@ -224,7 +230,8 @@ const Settings = () => {
                     </Badge>
                   </TableCell>
                   <TableCell className="text-gray-600 dark:text-gray-400">
-                    <span className="font-medium">{tag.usage}</span> {t("settings.documents")}
+                    <span className="font-medium">{tag.usage}</span>{" "}
+                    {t("settings.documents")}
                   </TableCell>
                   <TableCell className="text-gray-600 dark:text-gray-400 max-w-xs truncate">
                     {tag.description}
@@ -278,13 +285,17 @@ const Settings = () => {
                   <span className="text-sm font-medium dark:text-gray-300">
                     {t("settings.autoApproveHighConfidence")}
                   </span>
-                  <span className="text-sm text-green-600">{t("settings.enabled")}</span>
+                  <span className="text-sm text-green-600">
+                    {t("settings.enabled")}
+                  </span>
                 </div>
                 <div className="flex items-center justify-between p-3 bg-gray-50 dark:bg-gray-700 rounded-lg">
                   <span className="text-sm font-medium dark:text-gray-300">
                     {t("settings.flagLowConfidence")}
                   </span>
-                  <span className="text-sm text-yellow-600">{t("settings.below70")}</span>
+                  <span className="text-sm text-yellow-600">
+                    {t("settings.below70")}
+                  </span>
                 </div>
               </div>
             </div>

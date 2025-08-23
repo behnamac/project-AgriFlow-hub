@@ -146,9 +146,15 @@ const DocumentReview = () => {
                     <SelectItem value="Bill of Lading">
                       {t("documentTypes.billOfLading")}
                     </SelectItem>
-                    <SelectItem value="Invoice">{t("documentTypes.invoice")}</SelectItem>
-                    <SelectItem value="Certificate">{t("documentTypes.certificate")}</SelectItem>
-                    <SelectItem value="Packing List">{t("documentTypes.packingList")}</SelectItem>
+                    <SelectItem value="Invoice">
+                      {t("documentTypes.invoice")}
+                    </SelectItem>
+                    <SelectItem value="Certificate">
+                      {t("documentTypes.certificate")}
+                    </SelectItem>
+                    <SelectItem value="Packing List">
+                      {t("documentTypes.packingList")}
+                    </SelectItem>
                   </SelectContent>
                 </Select>
               ) : (
@@ -299,7 +305,9 @@ const DocumentReview = () => {
                 className="flex-1"
               >
                 <Edit className="h-4 w-4 mr-2" />
-                {isEditing ? t("documentReview.saveChanges") : t("documentReview.edit")}
+                {isEditing
+                  ? t("documentReview.saveChanges")
+                  : t("documentReview.edit")}
               </Button>
               <Button
                 onClick={handleFlag}

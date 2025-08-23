@@ -68,16 +68,24 @@ const Dashboard = () => {
           <Table>
             <TableHeader>
               <TableRow className="border-gray-200 dark:border-gray-700">
-                <TableHead className={getResponsiveTableCellClasses(true, false)}>
+                <TableHead
+                  className={getResponsiveTableCellClasses(true, false)}
+                >
                   {t("dashboard.documentName")}
                 </TableHead>
-                <TableHead className={getResponsiveTableCellClasses(true, true)}>
+                <TableHead
+                  className={getResponsiveTableCellClasses(true, true)}
+                >
                   {t("dashboard.type")}
                 </TableHead>
-                <TableHead className={getResponsiveTableCellClasses(true, false)}>
+                <TableHead
+                  className={getResponsiveTableCellClasses(true, false)}
+                >
                   {t("dashboard.status")}
                 </TableHead>
-                <TableHead className={getResponsiveTableCellClasses(true, true)}>
+                <TableHead
+                  className={getResponsiveTableCellClasses(true, true)}
+                >
                   {t("dashboard.dateReceived")}
                 </TableHead>
               </TableRow>
@@ -96,13 +104,17 @@ const Dashboard = () => {
                       </span>
                     </div>
                   </TableCell>
-                  <TableCell className="text-gray-600 dark:text-gray-400 hidden sm:table-cell">
+                  <TableCell
+                    className={getResponsiveTableCellClasses(false, true)}
+                  >
                     {doc.type}
                   </TableCell>
                   <TableCell>
                     <Badge className={doc.statusColor}>{doc.status}</Badge>
                   </TableCell>
-                  <TableCell className="text-gray-600 dark:text-gray-400 hidden sm:table-cell">
+                  <TableCell
+                    className={getResponsiveTableCellClasses(false, true)}
+                  >
                     {doc.date}
                   </TableCell>
                 </TableRow>

@@ -23,6 +23,7 @@ import { useNavigate } from "react-router-dom";
 
 import { emailData } from "@/data/documentInboxData";
 import { useTranslation } from "@/hooks/useTranslation";
+import { getResponsiveTableCellClasses } from "@/utils/translation";
 
 const DocumentInbox = () => {
   const { t } = useTranslation();
@@ -108,22 +109,34 @@ const DocumentInbox = () => {
           <Table>
             <TableHeader>
               <TableRow className="border-gray-200 dark:border-gray-700">
-                <TableHead className="font-semibold text-gray-700 dark:text-gray-300">
+                <TableHead
+                  className={getResponsiveTableCellClasses(true, false)}
+                >
                   {t("documentInbox.emailSubject")}
                 </TableHead>
-                <TableHead className="font-semibold text-gray-700 dark:text-gray-300 hidden sm:table-cell">
+                <TableHead
+                  className={getResponsiveTableCellClasses(true, true)}
+                >
                   {t("documentInbox.sender")}
                 </TableHead>
-                <TableHead className="font-semibold text-gray-700 dark:text-gray-300">
+                <TableHead
+                  className={getResponsiveTableCellClasses(true, false)}
+                >
                   {t("documentInbox.attachments")}
                 </TableHead>
-                <TableHead className="font-semibold text-gray-700 dark:text-gray-300">
+                <TableHead
+                  className={getResponsiveTableCellClasses(true, false)}
+                >
                   {t("dashboard.status")}
                 </TableHead>
-                <TableHead className="font-semibold text-gray-700 dark:text-gray-300">
+                <TableHead
+                  className={getResponsiveTableCellClasses(true, false)}
+                >
                   {t("documentInbox.date")}
                 </TableHead>
-                <TableHead className="font-semibold text-gray-700 dark:text-gray-300">
+                <TableHead
+                  className={getResponsiveTableCellClasses(true, false)}
+                >
                   {t("common.actions")}
                 </TableHead>
               </TableRow>
@@ -142,7 +155,9 @@ const DocumentInbox = () => {
                       </span>
                     </div>
                   </TableCell>
-                  <TableCell className="text-gray-600 dark:text-gray-400 hidden sm:table-cell">
+                  <TableCell
+                    className={getResponsiveTableCellClasses(false, true)}
+                  >
                     {email.sender}
                   </TableCell>
                   <TableCell>
