@@ -15,7 +15,8 @@ import { NAVIGATION_ITEMS } from "@/constants";
 import { useTranslation } from "@/hooks/useTranslation";
 
 export const AppSidebarContainer: React.FC = () => {
-  const { collapsed } = useSidebar();
+  const { state } = useSidebar();
+  const collapsed = state === "collapsed";
   const location = useLocation();
   const { t } = useTranslation();
 
