@@ -143,26 +143,26 @@ const DocumentInbox = () => {
         <CardContent className="overflow-x-auto">
           <Table>
             <TableHeader>
-                              <TableRow className="border-gray-200 dark:border-gray-700">
-                  <TableHead className="font-semibold text-gray-700 dark:text-gray-300">
-                    Email Subject
-                  </TableHead>
-                  <TableHead className="font-semibold text-gray-700 dark:text-gray-300 hidden sm:table-cell">
-                    Sender
-                  </TableHead>
-                  <TableHead className="font-semibold text-gray-700 dark:text-gray-300">
-                    Attachments
-                  </TableHead>
-                  <TableHead className="font-semibold text-gray-700 dark:text-gray-300">
-                    Status
-                  </TableHead>
-                  <TableHead className="font-semibold text-gray-700 dark:text-gray-300">
-                    Date
-                  </TableHead>
-                  <TableHead className="font-semibold text-gray-700 dark:text-gray-300">
-                    Actions
-                  </TableHead>
-                </TableRow>
+              <TableRow className="border-gray-200 dark:border-gray-700">
+                <TableHead className="font-semibold text-gray-700 dark:text-gray-300">
+                  Email Subject
+                </TableHead>
+                <TableHead className="font-semibold text-gray-700 dark:text-gray-300 hidden sm:table-cell">
+                  Sender
+                </TableHead>
+                <TableHead className="font-semibold text-gray-700 dark:text-gray-300">
+                  Attachments
+                </TableHead>
+                <TableHead className="font-semibold text-gray-700 dark:text-gray-300">
+                  Status
+                </TableHead>
+                <TableHead className="font-semibold text-gray-700 dark:text-gray-300">
+                  Date
+                </TableHead>
+                <TableHead className="font-semibold text-gray-700 dark:text-gray-300">
+                  Actions
+                </TableHead>
+              </TableRow>
             </TableHeader>
             <TableBody>
               {filteredEmails.map((email) => (
@@ -196,7 +196,9 @@ const DocumentInbox = () => {
                   <TableCell>
                     <Badge className={email.statusColor}>{email.status}</Badge>
                   </TableCell>
-                  <TableCell className="text-gray-600 dark:text-gray-400">{email.date}</TableCell>
+                  <TableCell className="text-gray-600 dark:text-gray-400">
+                    {email.date}
+                  </TableCell>
                   <TableCell>
                     <div className="flex gap-2">
                       <Button

@@ -142,15 +142,17 @@ const Settings = () => {
     <div className="space-y-4 sm:space-y-6">
       <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
         <div>
-          <h1 className="text-2xl sm:text-3xl font-bold text-gray-900">Settings</h1>
-          <p className="text-gray-600 mt-1 text-sm sm:text-base">
+          <h1 className="text-2xl sm:text-3xl font-bold text-gray-900 dark:text-white">
+            Settings
+          </h1>
+          <p className="text-gray-600 dark:text-gray-400 mt-1 text-sm sm:text-base">
             Manage tags and document classification settings
           </p>
         </div>
       </div>
 
       {/* Tag Management Section */}
-      <Card className="bg-white border border-gray-200">
+      <Card className="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700">
         <CardHeader>
           <div className="flex items-center justify-between">
             <CardTitle className="flex items-center gap-2">
@@ -234,20 +236,20 @@ const Settings = () => {
         <CardContent>
           <Table>
             <TableHeader>
-              <TableRow className="border-gray-200">
-                <TableHead className="font-semibold text-gray-700">
+              <TableRow className="border-gray-200 dark:border-gray-700">
+                <TableHead className="font-semibold text-gray-700 dark:text-gray-300">
                   Tag Name
                 </TableHead>
-                <TableHead className="font-semibold text-gray-700">
+                <TableHead className="font-semibold text-gray-700 dark:text-gray-300">
                   Type
                 </TableHead>
-                <TableHead className="font-semibold text-gray-700">
+                <TableHead className="font-semibold text-gray-700 dark:text-gray-300">
                   Usage Count
                 </TableHead>
-                <TableHead className="font-semibold text-gray-700">
+                <TableHead className="font-semibold text-gray-700 dark:text-gray-300">
                   Description
                 </TableHead>
-                <TableHead className="font-semibold text-gray-700">
+                <TableHead className="font-semibold text-gray-700 dark:text-gray-300">
                   Actions
                 </TableHead>
               </TableRow>
@@ -256,9 +258,9 @@ const Settings = () => {
               {tagsData.map((tag) => (
                 <TableRow
                   key={tag.id}
-                  className="border-gray-100 hover:bg-gray-50"
+                  className="border-gray-100 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-700"
                 >
-                  <TableCell className="font-medium text-gray-900">
+                  <TableCell className="font-medium text-gray-900 dark:text-white">
                     <div className="flex items-center gap-2">
                       <Badge className={tag.color}>{tag.name}</Badge>
                     </div>
@@ -268,10 +270,10 @@ const Settings = () => {
                       {tag.type}
                     </Badge>
                   </TableCell>
-                  <TableCell className="text-gray-600">
+                  <TableCell className="text-gray-600 dark:text-gray-400">
                     <span className="font-medium">{tag.usage}</span> documents
                   </TableCell>
-                  <TableCell className="text-gray-600 max-w-xs truncate">
+                  <TableCell className="text-gray-600 dark:text-gray-400 max-w-xs truncate">
                     {tag.description}
                   </TableCell>
                   <TableCell>
@@ -297,7 +299,7 @@ const Settings = () => {
       </Card>
 
       {/* System Settings */}
-      <Card className="bg-white border border-gray-200">
+      <Card className="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700">
         <CardHeader>
           <CardTitle className="flex items-center gap-2">
             <SettingsIcon className="h-5 w-5" />
@@ -307,24 +309,26 @@ const Settings = () => {
         <CardContent className="space-y-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
             <div className="space-y-4">
-              <h3 className="text-lg font-semibold text-gray-900">
+              <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
                 Auto-Classification
               </h3>
               <div className="space-y-3">
-                <div className="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
-                  <span className="text-sm font-medium">
+                <div className="flex items-center justify-between p-3 bg-gray-50 dark:bg-gray-700 rounded-lg">
+                  <span className="text-sm font-medium dark:text-gray-300">
                     Minimum Confidence Threshold
                   </span>
-                  <span className="text-sm text-gray-600">85%</span>
+                  <span className="text-sm text-gray-600 dark:text-gray-400">
+                    85%
+                  </span>
                 </div>
-                <div className="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
-                  <span className="text-sm font-medium">
+                <div className="flex items-center justify-between p-3 bg-gray-50 dark:bg-gray-700 rounded-lg">
+                  <span className="text-sm font-medium dark:text-gray-300">
                     Auto-approve High Confidence
                   </span>
                   <span className="text-sm text-green-600">Enabled</span>
                 </div>
-                <div className="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
-                  <span className="text-sm font-medium">
+                <div className="flex items-center justify-between p-3 bg-gray-50 dark:bg-gray-700 rounded-lg">
+                  <span className="text-sm font-medium dark:text-gray-300">
                     Flag Low Confidence
                   </span>
                   <span className="text-sm text-yellow-600">Below 70%</span>
@@ -333,29 +337,39 @@ const Settings = () => {
             </div>
 
             <div className="space-y-4">
-              <h3 className="text-lg font-semibold text-gray-900">
+              <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
                 Email Processing
               </h3>
               <div className="space-y-3">
-                <div className="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
-                  <span className="text-sm font-medium">Check Frequency</span>
-                  <span className="text-sm text-gray-600">Every 5 minutes</span>
+                <div className="flex items-center justify-between p-3 bg-gray-50 dark:bg-gray-700 rounded-lg">
+                  <span className="text-sm font-medium dark:text-gray-300">
+                    Check Frequency
+                  </span>
+                  <span className="text-sm text-gray-600 dark:text-gray-400">
+                    Every 5 minutes
+                  </span>
                 </div>
-                <div className="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
-                  <span className="text-sm font-medium">
+                <div className="flex items-center justify-between p-3 bg-gray-50 dark:bg-gray-700 rounded-lg">
+                  <span className="text-sm font-medium dark:text-gray-300">
                     Attachment Size Limit
                   </span>
-                  <span className="text-sm text-gray-600">25 MB</span>
+                  <span className="text-sm text-gray-600 dark:text-gray-400">
+                    25 MB
+                  </span>
                 </div>
-                <div className="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
-                  <span className="text-sm font-medium">Supported Formats</span>
-                  <span className="text-sm text-gray-600">PDF, DOC, DOCX</span>
+                <div className="flex items-center justify-between p-3 bg-gray-50 dark:bg-gray-700 rounded-lg">
+                  <span className="text-sm font-medium dark:text-gray-300">
+                    Supported Formats
+                  </span>
+                  <span className="text-sm text-gray-600 dark:text-gray-400">
+                    PDF, DOC, DOCX
+                  </span>
                 </div>
               </div>
             </div>
           </div>
 
-          <div className="flex flex-col sm:flex-row gap-4 pt-4 border-t border-gray-200">
+          <div className="flex flex-col sm:flex-row gap-4 pt-4 border-t border-gray-200 dark:border-gray-700">
             <Button>Save Configuration</Button>
             <Button variant="outline">Reset to Defaults</Button>
           </div>

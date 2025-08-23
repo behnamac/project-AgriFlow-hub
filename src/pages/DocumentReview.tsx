@@ -178,14 +178,14 @@ const DocumentReview = () => {
                   {documentData.confidence.shipper}%
                 </Badge>
               </Label>
-              <Input
-                value={documentData.shipper}
-                readOnly={!isEditing}
-                className={isEditing ? "" : "bg-gray-50"}
-                onChange={(e) =>
-                  setDocumentData({ ...documentData, shipper: e.target.value })
-                }
-              />
+                              <Input
+                  value={documentData.shipper}
+                  readOnly={!isEditing}
+                  className={isEditing ? "" : "bg-gray-50 dark:bg-gray-700 dark:text-white"}
+                  onChange={(e) =>
+                    setDocumentData({ ...documentData, shipper: e.target.value })
+                  }
+                />
             </div>
 
             {/* Consignee */}
@@ -198,17 +198,17 @@ const DocumentReview = () => {
                   {documentData.confidence.consignee}%
                 </Badge>
               </Label>
-              <Input
-                value={documentData.consignee}
-                readOnly={!isEditing}
-                className={isEditing ? "" : "bg-gray-50"}
-                onChange={(e) =>
-                  setDocumentData({
-                    ...documentData,
-                    consignee: e.target.value,
-                  })
-                }
-              />
+                              <Input
+                  value={documentData.consignee}
+                  readOnly={!isEditing}
+                  className={isEditing ? "" : "bg-gray-50 dark:bg-gray-700 dark:text-white"}
+                  onChange={(e) =>
+                    setDocumentData({
+                      ...documentData,
+                      consignee: e.target.value,
+                    })
+                  }
+                />
             </div>
 
             {/* Date */}

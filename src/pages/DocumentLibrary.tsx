@@ -125,17 +125,17 @@ const DocumentLibrary = () => {
     <div className="space-y-4 sm:space-y-6">
       <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
         <div>
-          <h1 className="text-2xl sm:text-3xl font-bold text-gray-900">
+          <h1 className="text-2xl sm:text-3xl font-bold text-gray-900 dark:text-white">
             Document Library
           </h1>
-          <p className="text-gray-600 mt-1 text-sm sm:text-base">
+          <p className="text-gray-600 dark:text-gray-400 mt-1 text-sm sm:text-base">
             Search and manage your archived documents
           </p>
         </div>
       </div>
 
       {/* Search and Filters */}
-      <Card className="bg-white border border-gray-200">
+      <Card className="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700">
         <CardContent className="p-4">
           <div className="flex flex-col lg:flex-row gap-4">
             <div className="flex-1 relative">
@@ -180,7 +180,7 @@ const DocumentLibrary = () => {
       </Card>
 
       {/* Documents Table */}
-      <Card className="bg-white border border-gray-200">
+      <Card className="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700">
         <CardHeader>
           <CardTitle className="flex items-center gap-2">
             <Library className="h-5 w-5" />
@@ -190,26 +190,26 @@ const DocumentLibrary = () => {
         <CardContent className="overflow-x-auto">
           <Table>
             <TableHeader>
-              <TableRow className="border-gray-200">
-                <TableHead className="font-semibold text-gray-700">
+              <TableRow className="border-gray-200 dark:border-gray-700">
+                <TableHead className="font-semibold text-gray-700 dark:text-gray-300">
                   Name
                 </TableHead>
-                <TableHead className="font-semibold text-gray-700">
+                <TableHead className="font-semibold text-gray-700 dark:text-gray-300">
                   Type
                 </TableHead>
-                <TableHead className="font-semibold text-gray-700">
+                <TableHead className="font-semibold text-gray-700 dark:text-gray-300">
                   Tags
                 </TableHead>
-                <TableHead className="font-semibold text-gray-700">
+                <TableHead className="font-semibold text-gray-700 dark:text-gray-300">
                   Contact
                 </TableHead>
-                <TableHead className="font-semibold text-gray-700">
+                <TableHead className="font-semibold text-gray-700 dark:text-gray-300">
                   Date
                 </TableHead>
-                <TableHead className="font-semibold text-gray-700">
+                <TableHead className="font-semibold text-gray-700 dark:text-gray-300">
                   Status
                 </TableHead>
-                <TableHead className="font-semibold text-gray-700">
+                <TableHead className="font-semibold text-gray-700 dark:text-gray-300">
                   Actions
                 </TableHead>
               </TableRow>
@@ -218,15 +218,17 @@ const DocumentLibrary = () => {
               {filteredDocuments.map((doc) => (
                 <TableRow
                   key={doc.id}
-                  className="border-gray-100 hover:bg-gray-50"
+                  className="border-gray-100 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-700"
                 >
-                  <TableCell className="font-medium text-gray-900 max-w-xs">
+                  <TableCell className="font-medium text-gray-900 dark:text-white max-w-xs">
                     <div className="flex items-center gap-2">
                       <span className="text-lg">{getTypeIcon(doc.type)}</span>
                       <span className="truncate">{doc.name}</span>
                     </div>
                   </TableCell>
-                  <TableCell className="text-gray-600">{doc.type}</TableCell>
+                  <TableCell className="text-gray-600 dark:text-gray-400">
+                    {doc.type}
+                  </TableCell>
                   <TableCell>
                     <div className="flex flex-wrap gap-1">
                       {doc.tags.map((tag, index) => (
@@ -242,11 +244,15 @@ const DocumentLibrary = () => {
                   </TableCell>
                   <TableCell>
                     <div className="flex items-center gap-2">
-                      <Building className="h-4 w-4 text-gray-400" />
-                      <span className="text-gray-600">{doc.contact}</span>
+                      <Building className="h-4 w-4 text-gray-400 dark:text-gray-500" />
+                      <span className="text-gray-600 dark:text-gray-400">
+                        {doc.contact}
+                      </span>
                     </div>
                   </TableCell>
-                  <TableCell className="text-gray-600">{doc.date}</TableCell>
+                  <TableCell className="text-gray-600 dark:text-gray-400">
+                    {doc.date}
+                  </TableCell>
                   <TableCell>
                     <Badge className={doc.statusColor}>{doc.status}</Badge>
                   </TableCell>
