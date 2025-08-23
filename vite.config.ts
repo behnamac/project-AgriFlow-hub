@@ -4,8 +4,8 @@ import path from "path";
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => {
-  const isVercel = process.env.DISABLE_ROLLUP_NATIVE === 'true';
-  
+  const isVercel = process.env.DISABLE_ROLLUP_NATIVE === "true";
+
   return {
     server: {
       host: "::",
@@ -27,27 +27,29 @@ export default defineConfig(({ mode }) => {
         }),
       },
       // Ensure we don't use native dependencies
-      target: 'esnext',
-      minify: 'esbuild',
+      target: "esnext",
+      minify: "esbuild",
     },
     optimizeDeps: {
       // Force Vite to use pure JavaScript implementations
       include: [],
       exclude: [
-        '@rollup/rollup-linux-x64-gnu', 
-        '@rollup/rollup-darwin-arm64', 
-        '@rollup/rollup-darwin-x64',
-        '@rollup/rollup-win32-x64-msvc'
+        "@rollup/rollup-linux-x64-gnu",
+        "@rollup/rollup-darwin-arm64",
+        "@rollup/rollup-darwin-x64",
+        "@rollup/rollup-win32-x64-msvc",
       ],
     },
     // Force Vite to use pure JavaScript implementations
     define: {
-      'process.env.NODE_ENV': JSON.stringify(mode),
-      'process.env.DISABLE_ROLLUP_NATIVE': JSON.stringify(process.env.DISABLE_ROLLUP_NATIVE || 'false'),
+      "process.env.NODE_ENV": JSON.stringify(mode),
+      "process.env.DISABLE_ROLLUP_NATIVE": JSON.stringify(
+        process.env.DISABLE_ROLLUP_NATIVE || "false"
+      ),
     },
     esbuild: {
       // Use esbuild instead of native modules
-      target: 'esnext',
+      target: "esnext",
     },
   };
 });
