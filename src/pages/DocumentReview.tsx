@@ -25,6 +25,7 @@ import {
   Percent,
 } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
+import { documentReviewData } from "@/data/documentReviewData";
 
 const DocumentReview = () => {
   const { id } = useParams();
@@ -33,22 +34,7 @@ const DocumentReview = () => {
   const [isEditing, setIsEditing] = useState(false);
 
   // Mock document data based on ID
-  const [documentData, setDocumentData] = useState({
-    name: "BOL-4832.pdf",
-    type: "Bill of Lading",
-    shipper: "AgriFlow BV",
-    consignee: "FreshCo Markets",
-    date: "2025-07-13",
-    vesselName: "Harvest Star",
-    portOfLoading: "Rotterdam",
-    portOfDischarge: "Le Havre",
-    confidence: {
-      type: 95,
-      shipper: 92,
-      consignee: 88,
-      date: 97,
-    },
-  });
+  const [documentData, setDocumentData] = useState(documentReviewData);
 
   const handleApprove = () => {
     toast({
@@ -89,7 +75,9 @@ const DocumentReview = () => {
           Back to Inbox
         </Button>
         <div>
-          <h1 className="text-2xl sm:text-3xl font-bold text-gray-900 dark:text-white">Document Review</h1>
+          <h1 className="text-2xl sm:text-3xl font-bold text-gray-900 dark:text-white">
+            Document Review
+          </h1>
           <p className="text-gray-600 dark:text-gray-400 mt-1 text-sm sm:text-base">
             Review and validate document metadata
           </p>
@@ -109,7 +97,9 @@ const DocumentReview = () => {
             <div className="bg-gray-100 dark:bg-gray-700 border-2 border-dashed border-gray-300 dark:border-gray-600 rounded-lg h-64 sm:h-96 flex items-center justify-center">
               <div className="text-center">
                 <FileText className="h-16 w-16 text-gray-400 dark:text-gray-500 mx-auto mb-4" />
-                <p className="text-gray-500 dark:text-gray-400 font-medium">{documentData.name}</p>
+                <p className="text-gray-500 dark:text-gray-400 font-medium">
+                  {documentData.name}
+                </p>
                 <p className="text-sm text-gray-400 dark:text-gray-500 mt-2">
                   PDF preview would appear here
                 </p>
@@ -160,11 +150,11 @@ const DocumentReview = () => {
                   </SelectContent>
                 </Select>
               ) : (
-                                  <Input
-                    value={documentData.type}
-                    readOnly
-                    className="bg-gray-50 dark:bg-gray-700 dark:text-white"
-                  />
+                <Input
+                  value={documentData.type}
+                  readOnly
+                  className="bg-gray-50 dark:bg-gray-700 dark:text-white"
+                />
               )}
             </div>
 
@@ -178,14 +168,16 @@ const DocumentReview = () => {
                   {documentData.confidence.shipper}%
                 </Badge>
               </Label>
-                              <Input
-                  value={documentData.shipper}
-                  readOnly={!isEditing}
-                  className={isEditing ? "" : "bg-gray-50 dark:bg-gray-700 dark:text-white"}
-                  onChange={(e) =>
-                    setDocumentData({ ...documentData, shipper: e.target.value })
-                  }
-                />
+              <Input
+                value={documentData.shipper}
+                readOnly={!isEditing}
+                className={
+                  isEditing ? "" : "bg-gray-50 dark:bg-gray-700 dark:text-white"
+                }
+                onChange={(e) =>
+                  setDocumentData({ ...documentData, shipper: e.target.value })
+                }
+              />
             </div>
 
             {/* Consignee */}
@@ -198,17 +190,19 @@ const DocumentReview = () => {
                   {documentData.confidence.consignee}%
                 </Badge>
               </Label>
-                              <Input
-                  value={documentData.consignee}
-                  readOnly={!isEditing}
-                  className={isEditing ? "" : "bg-gray-50 dark:bg-gray-700 dark:text-white"}
-                  onChange={(e) =>
-                    setDocumentData({
-                      ...documentData,
-                      consignee: e.target.value,
-                    })
-                  }
-                />
+              <Input
+                value={documentData.consignee}
+                readOnly={!isEditing}
+                className={
+                  isEditing ? "" : "bg-gray-50 dark:bg-gray-700 dark:text-white"
+                }
+                onChange={(e) =>
+                  setDocumentData({
+                    ...documentData,
+                    consignee: e.target.value,
+                  })
+                }
+              />
             </div>
 
             {/* Date */}

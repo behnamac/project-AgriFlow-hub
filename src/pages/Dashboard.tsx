@@ -8,82 +8,8 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
-import {
-  FileText,
-  CheckCircle,
-  Clock,
-  AlertTriangle,
-  TrendingUp,
-} from "lucide-react";
-
-const statsData = [
-  {
-    title: "Processed Today",
-    value: "48",
-    icon: CheckCircle,
-    color: "text-green-600",
-    bgColor: "bg-green-100",
-  },
-  {
-    title: "Pending Review",
-    value: "7",
-    icon: Clock,
-    color: "text-yellow-600",
-    bgColor: "bg-yellow-100",
-  },
-  {
-    title: "Auto-Classified",
-    value: "41",
-    icon: TrendingUp,
-    color: "text-blue-600",
-    bgColor: "bg-blue-100",
-  },
-  {
-    title: "Errors",
-    value: "3",
-    icon: AlertTriangle,
-    color: "text-red-600",
-    bgColor: "bg-red-100",
-  },
-];
-
-const recentActivity = [
-  {
-    name: "BOL-4832.pdf",
-    type: "Bill of Lading",
-    status: "Processed",
-    date: "14 Jul 2025",
-    statusColor: "bg-green-100 text-green-700",
-  },
-  {
-    name: "Invoice-7791.pdf",
-    type: "Invoice",
-    status: "Pending Review",
-    date: "14 Jul 2025",
-    statusColor: "bg-yellow-100 text-yellow-700",
-  },
-  {
-    name: "Organic_Cert.pdf",
-    type: "Organic Certificate",
-    status: "Processed",
-    date: "13 Jul 2025",
-    statusColor: "bg-green-100 text-green-700",
-  },
-  {
-    name: "Packing_List_445.pdf",
-    type: "Packing List",
-    status: "Error",
-    date: "13 Jul 2025",
-    statusColor: "bg-red-100 text-red-700",
-  },
-  {
-    name: "Phyto_Cert.pdf",
-    type: "Phytosanitary Certificate",
-    status: "Processed",
-    date: "12 Jul 2025",
-    statusColor: "bg-green-100 text-green-700",
-  },
-];
+import { FileText } from "lucide-react";
+import { statsData, recentActivity } from "@/data/dashboardData";
 
 const Dashboard = () => {
   return (
@@ -102,10 +28,10 @@ const Dashboard = () => {
       {/* Stats Cards */}
       <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-6">
         {statsData.map((stat) => (
-                      <Card
-              key={stat.title}
-              className="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 hover:shadow-md transition-shadow"
-            >
+          <Card
+            key={stat.title}
+            className="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 hover:shadow-md transition-shadow"
+          >
             <CardContent className="p-4 sm:p-6">
               <div className="flex items-center justify-between">
                 <div>
@@ -138,20 +64,20 @@ const Dashboard = () => {
         <CardContent className="overflow-x-auto">
           <Table>
             <TableHeader>
-                              <TableRow className="border-gray-200 dark:border-gray-700">
-                  <TableHead className="font-semibold text-gray-700 dark:text-gray-300">
-                    Document
-                  </TableHead>
-                  <TableHead className="font-semibold text-gray-700 dark:text-gray-300 hidden sm:table-cell">
-                    Type
-                  </TableHead>
-                  <TableHead className="font-semibold text-gray-700 dark:text-gray-300">
-                    Status
-                  </TableHead>
-                  <TableHead className="font-semibold text-gray-700 dark:text-gray-300 hidden sm:table-cell">
-                    Date
-                  </TableHead>
-                </TableRow>
+              <TableRow className="border-gray-200 dark:border-gray-700">
+                <TableHead className="font-semibold text-gray-700 dark:text-gray-300">
+                  Document
+                </TableHead>
+                <TableHead className="font-semibold text-gray-700 dark:text-gray-300 hidden sm:table-cell">
+                  Type
+                </TableHead>
+                <TableHead className="font-semibold text-gray-700 dark:text-gray-300">
+                  Status
+                </TableHead>
+                <TableHead className="font-semibold text-gray-700 dark:text-gray-300 hidden sm:table-cell">
+                  Date
+                </TableHead>
+              </TableRow>
             </TableHeader>
             <TableBody>
               {recentActivity.map((doc, index) => (

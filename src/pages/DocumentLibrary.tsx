@@ -20,68 +20,7 @@ import {
 } from "@/components/ui/table";
 import { Library, Search, Filter, Download, Eye, Building } from "lucide-react";
 
-const documentsData = [
-  {
-    id: 1,
-    name: "Invoice_2241.pdf",
-    type: "Invoice",
-    tags: ["Q3 Shipment", "Processed"],
-    contact: "FreshCo Markets",
-    date: "10 Jul 2025",
-    status: "Approved",
-    statusColor: "bg-green-100 text-green-700",
-  },
-  {
-    id: 2,
-    name: "CO-1123.pdf",
-    type: "Certificate",
-    tags: ["Organic", "Verified"],
-    contact: "GreenHarvest Supply",
-    date: "12 Jul 2025",
-    status: "Verified",
-    statusColor: "bg-blue-100 text-blue-700",
-  },
-  {
-    id: 3,
-    name: "BOL-4832.pdf",
-    type: "Bill of Lading",
-    tags: ["Urgent", "Maritime"],
-    contact: "Global Shipping Co.",
-    date: "14 Jul 2025",
-    status: "Processed",
-    statusColor: "bg-green-100 text-green-700",
-  },
-  {
-    id: 4,
-    name: "PackingList-7791.pdf",
-    type: "Packing List",
-    tags: ["Q3 Shipment", "Bulk"],
-    contact: "TradeNet Express",
-    date: "13 Jul 2025",
-    status: "Archived",
-    statusColor: "bg-gray-100 text-gray-700",
-  },
-  {
-    id: 5,
-    name: "Certificate_Organic.pdf",
-    type: "Certificate",
-    tags: ["Organic", "EU Certified"],
-    contact: "Bio-Control",
-    date: "11 Jul 2025",
-    status: "Valid",
-    statusColor: "bg-green-100 text-green-700",
-  },
-  {
-    id: 6,
-    name: "Customs_Declaration_445.pdf",
-    type: "Customs",
-    tags: ["Import", "Declared"],
-    contact: "Express Logistics",
-    date: "09 Jul 2025",
-    status: "Cleared",
-    statusColor: "bg-blue-100 text-blue-700",
-  },
-];
+import { documentsData } from "@/data/documentLibraryData";
 
 const DocumentLibrary = () => {
   const [searchTerm, setSearchTerm] = useState("");
