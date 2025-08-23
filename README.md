@@ -1,9 +1,5 @@
 # AgriFlow Document Hub
 
-## Project info
-
-**URL**: https://lovable.dev/projects/4b955190-d792-4d03-8538-e6e1f7cf0f79
-
 ## About AgriFlow
 
 AgriFlow is a specialized agricultural logistics company that handles the transportation and documentation of agricultural products worldwide. Our document management system helps streamline the complex process of managing shipping documents, certifications, and compliance requirements for agricultural exports and imports.
@@ -19,15 +15,7 @@ AgriFlow is a specialized agricultural logistics company that handles the transp
 
 There are several ways of editing your application.
 
-**Use Lovable**
-
-Simply visit the [Lovable Project](https://lovable.dev/projects/4b955190-d792-4d03-8538-e6e1f7cf0f79) and start prompting.
-
-Changes made via Lovable will be committed automatically to this repo.
-
 **Use your preferred IDE**
-
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
 
 The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
 
@@ -70,15 +58,17 @@ This project is built with:
 - React
 - shadcn-ui
 - Tailwind CSS
+- DaisyUI
 
 ## How can I deploy this project?
 
-Simply open [Lovable](https://lovable.dev/projects/4b955190-d792-4d03-8538-e6e1f7cf0f79) and click on Share -> Publish.
+You can deploy this project to any hosting platform that supports static sites, such as:
 
-## Can I connect a custom domain to my Lovable project?
+- **Vercel**: Connect your GitHub repository and deploy automatically
+- **Netlify**: Drag and drop your build folder or connect your repository
+- **GitHub Pages**: Enable GitHub Pages in your repository settings
+- **AWS S3 + CloudFront**: Upload your build files to S3 and serve via CloudFront
 
-Yes, you can!
+## Project Structure
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+See [PROJECT_STRUCTURE.md](./PROJECT_STRUCTURE.md) for detailed information about the project architecture and organization.
