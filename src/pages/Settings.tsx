@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -28,24 +27,30 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "@/components/ui/dialog";
-import { Settings as SettingsIcon, Tag, Plus, Edit, Trash2 } from "lucide-react";
+import {
+  Settings as SettingsIcon,
+  Tag,
+  Plus,
+  Edit,
+  Trash2,
+} from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 
 const tagsData = [
   {
     id: 1,
-    name: "Halal",
-    usage: 112,
+    name: "Organic",
+    usage: 156,
     type: "Certification",
-    description: "Halal certification documents",
+    description: "Organic certification documents",
     color: "bg-green-100 text-green-700",
   },
   {
     id: 2,
-    name: "Q3 Shipment",
+    name: "Q3 Harvest",
     usage: 87,
     type: "Operational",
-    description: "Third quarter shipment documents",
+    description: "Third quarter harvest documents",
     color: "bg-blue-100 text-blue-700",
   },
   {
@@ -58,10 +63,10 @@ const tagsData = [
   },
   {
     id: 4,
-    name: "Organic",
+    name: "Fair Trade",
     usage: 89,
     type: "Certification",
-    description: "Organic certification and compliance documents",
+    description: "Fair Trade certification and compliance documents",
     color: "bg-green-100 text-green-700",
   },
   {
@@ -74,10 +79,10 @@ const tagsData = [
   },
   {
     id: 6,
-    name: "EU Certified",
-    usage: 67,
+    name: "Phytosanitary",
+    usage: 134,
     type: "Certification",
-    description: "European Union certification documents",
+    description: "Phytosanitary certificates for plant health",
     color: "bg-purple-100 text-purple-700",
   },
 ];
@@ -138,7 +143,9 @@ const Settings = () => {
       <div className="flex items-center justify-between">
         <div>
           <h1 className="text-3xl font-bold text-gray-900">Settings</h1>
-          <p className="text-gray-600 mt-1">Manage tags and document classification settings</p>
+          <p className="text-gray-600 mt-1">
+            Manage tags and document classification settings
+          </p>
         </div>
       </div>
 
@@ -168,17 +175,26 @@ const Settings = () => {
                       id="tag-name"
                       placeholder="Enter tag name"
                       value={newTag.name}
-                      onChange={(e) => setNewTag({ ...newTag, name: e.target.value })}
+                      onChange={(e) =>
+                        setNewTag({ ...newTag, name: e.target.value })
+                      }
                     />
                   </div>
                   <div className="space-y-2">
                     <Label htmlFor="tag-type">Type *</Label>
-                    <Select value={newTag.type} onValueChange={(value) => setNewTag({ ...newTag, type: value })}>
+                    <Select
+                      value={newTag.type}
+                      onValueChange={(value) =>
+                        setNewTag({ ...newTag, type: value })
+                      }
+                    >
                       <SelectTrigger>
                         <SelectValue placeholder="Select tag type" />
                       </SelectTrigger>
                       <SelectContent>
-                        <SelectItem value="Certification">Certification</SelectItem>
+                        <SelectItem value="Certification">
+                          Certification
+                        </SelectItem>
                         <SelectItem value="Operational">Operational</SelectItem>
                         <SelectItem value="Priority">Priority</SelectItem>
                         <SelectItem value="Transport">Transport</SelectItem>
@@ -192,7 +208,9 @@ const Settings = () => {
                       id="tag-description"
                       placeholder="Enter tag description"
                       value={newTag.description}
-                      onChange={(e) => setNewTag({ ...newTag, description: e.target.value })}
+                      onChange={(e) =>
+                        setNewTag({ ...newTag, description: e.target.value })
+                      }
                       rows={3}
                     />
                   </div>
@@ -200,7 +218,11 @@ const Settings = () => {
                     <Button onClick={handleAddTag} className="flex-1">
                       Add Tag
                     </Button>
-                    <Button variant="outline" onClick={() => setIsDialogOpen(false)} className="flex-1">
+                    <Button
+                      variant="outline"
+                      onClick={() => setIsDialogOpen(false)}
+                      className="flex-1"
+                    >
                       Cancel
                     </Button>
                   </div>
@@ -213,16 +235,29 @@ const Settings = () => {
           <Table>
             <TableHeader>
               <TableRow className="border-gray-200">
-                <TableHead className="font-semibold text-gray-700">Tag Name</TableHead>
-                <TableHead className="font-semibold text-gray-700">Type</TableHead>
-                <TableHead className="font-semibold text-gray-700">Usage Count</TableHead>
-                <TableHead className="font-semibold text-gray-700">Description</TableHead>
-                <TableHead className="font-semibold text-gray-700">Actions</TableHead>
+                <TableHead className="font-semibold text-gray-700">
+                  Tag Name
+                </TableHead>
+                <TableHead className="font-semibold text-gray-700">
+                  Type
+                </TableHead>
+                <TableHead className="font-semibold text-gray-700">
+                  Usage Count
+                </TableHead>
+                <TableHead className="font-semibold text-gray-700">
+                  Description
+                </TableHead>
+                <TableHead className="font-semibold text-gray-700">
+                  Actions
+                </TableHead>
               </TableRow>
             </TableHeader>
             <TableBody>
               {tagsData.map((tag) => (
-                <TableRow key={tag.id} className="border-gray-100 hover:bg-gray-50">
+                <TableRow
+                  key={tag.id}
+                  className="border-gray-100 hover:bg-gray-50"
+                >
                   <TableCell className="font-medium text-gray-900">
                     <div className="flex items-center gap-2">
                       <Badge className={tag.color}>{tag.name}</Badge>
@@ -244,9 +279,9 @@ const Settings = () => {
                       <Button size="sm" variant="outline" className="h-8">
                         <Edit className="h-4 w-4" />
                       </Button>
-                      <Button 
-                        size="sm" 
-                        variant="outline" 
+                      <Button
+                        size="sm"
+                        variant="outline"
                         className="h-8 hover:bg-red-50 hover:text-red-600"
                         onClick={() => handleDeleteTag(tag.name)}
                       >
@@ -272,32 +307,44 @@ const Settings = () => {
         <CardContent className="space-y-6">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div className="space-y-4">
-              <h3 className="text-lg font-semibold text-gray-900">Auto-Classification</h3>
+              <h3 className="text-lg font-semibold text-gray-900">
+                Auto-Classification
+              </h3>
               <div className="space-y-3">
                 <div className="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
-                  <span className="text-sm font-medium">Minimum Confidence Threshold</span>
+                  <span className="text-sm font-medium">
+                    Minimum Confidence Threshold
+                  </span>
                   <span className="text-sm text-gray-600">85%</span>
                 </div>
                 <div className="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
-                  <span className="text-sm font-medium">Auto-approve High Confidence</span>
+                  <span className="text-sm font-medium">
+                    Auto-approve High Confidence
+                  </span>
                   <span className="text-sm text-green-600">Enabled</span>
                 </div>
                 <div className="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
-                  <span className="text-sm font-medium">Flag Low Confidence</span>
+                  <span className="text-sm font-medium">
+                    Flag Low Confidence
+                  </span>
                   <span className="text-sm text-yellow-600">Below 70%</span>
                 </div>
               </div>
             </div>
 
             <div className="space-y-4">
-              <h3 className="text-lg font-semibold text-gray-900">Email Processing</h3>
+              <h3 className="text-lg font-semibold text-gray-900">
+                Email Processing
+              </h3>
               <div className="space-y-3">
                 <div className="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
                   <span className="text-sm font-medium">Check Frequency</span>
                   <span className="text-sm text-gray-600">Every 5 minutes</span>
                 </div>
                 <div className="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
-                  <span className="text-sm font-medium">Attachment Size Limit</span>
+                  <span className="text-sm font-medium">
+                    Attachment Size Limit
+                  </span>
                   <span className="text-sm text-gray-600">25 MB</span>
                 </div>
                 <div className="flex items-center justify-between p-3 bg-gray-50 rounded-lg">

@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -27,7 +26,7 @@ const documentsData = [
     name: "Invoice_2241.pdf",
     type: "Invoice",
     tags: ["Q3 Shipment", "Processed"],
-    contact: "Nestlé",
+    contact: "FreshCo Markets",
     date: "10 Jul 2025",
     status: "Approved",
     statusColor: "bg-green-100 text-green-700",
@@ -36,8 +35,8 @@ const documentsData = [
     id: 2,
     name: "CO-1123.pdf",
     type: "Certificate",
-    tags: ["Halal", "Verified"],
-    contact: "Danone",
+    tags: ["Organic", "Verified"],
+    contact: "GreenHarvest Supply",
     date: "12 Jul 2025",
     status: "Verified",
     statusColor: "bg-blue-100 text-blue-700",
@@ -47,7 +46,7 @@ const documentsData = [
     name: "BOL-4832.pdf",
     type: "Bill of Lading",
     tags: ["Urgent", "Maritime"],
-    contact: "Maersk",
+    contact: "Global Shipping Co.",
     date: "14 Jul 2025",
     status: "Processed",
     statusColor: "bg-green-100 text-green-700",
@@ -57,7 +56,7 @@ const documentsData = [
     name: "PackingList-7791.pdf",
     type: "Packing List",
     tags: ["Q3 Shipment", "Bulk"],
-    contact: "FedEx",
+    contact: "TradeNet Express",
     date: "13 Jul 2025",
     status: "Archived",
     statusColor: "bg-gray-100 text-gray-700",
@@ -77,7 +76,7 @@ const documentsData = [
     name: "Customs_Declaration_445.pdf",
     type: "Customs",
     tags: ["Import", "Declared"],
-    contact: "DHL",
+    contact: "Express Logistics",
     date: "09 Jul 2025",
     status: "Cleared",
     statusColor: "bg-blue-100 text-blue-700",
@@ -90,14 +89,18 @@ const DocumentLibrary = () => {
   const [statusFilter, setStatusFilter] = useState("all");
 
   const filteredDocuments = documentsData.filter((doc) => {
-    const matchesSearch = 
+    const matchesSearch =
       doc.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
       doc.contact.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      doc.tags.some(tag => tag.toLowerCase().includes(searchTerm.toLowerCase()));
-    
+      doc.tags.some((tag) =>
+        tag.toLowerCase().includes(searchTerm.toLowerCase())
+      );
+
     const matchesType = typeFilter === "all" || doc.type === typeFilter;
-    const matchesStatus = statusFilter === "all" || doc.status.toLowerCase() === statusFilter.toLowerCase();
-    
+    const matchesStatus =
+      statusFilter === "all" ||
+      doc.status.toLowerCase() === statusFilter.toLowerCase();
+
     return matchesSearch && matchesType && matchesStatus;
   });
 
@@ -123,7 +126,9 @@ const DocumentLibrary = () => {
       <div className="flex items-center justify-between">
         <div>
           <h1 className="text-3xl font-bold text-gray-900">Document Library</h1>
-          <p className="text-gray-600 mt-1">Search and manage your archived documents</p>
+          <p className="text-gray-600 mt-1">
+            Search and manage your archived documents
+          </p>
         </div>
       </div>
 
@@ -184,18 +189,35 @@ const DocumentLibrary = () => {
           <Table>
             <TableHeader>
               <TableRow className="border-gray-200">
-                <TableHead className="font-semibold text-gray-700">Name</TableHead>
-                <TableHead className="font-semibold text-gray-700">Type</TableHead>
-                <TableHead className="font-semibold text-gray-700">Tags</TableHead>
-                <TableHead className="font-semibold text-gray-700">Contact</TableHead>
-                <TableHead className="font-semibold text-gray-700">Date</TableHead>
-                <TableHead className="font-semibold text-gray-700">Status</TableHead>
-                <TableHead className="font-semibold text-gray-700">Actions</TableHead>
+                <TableHead className="font-semibold text-gray-700">
+                  Name
+                </TableHead>
+                <TableHead className="font-semibold text-gray-700">
+                  Type
+                </TableHead>
+                <TableHead className="font-semibold text-gray-700">
+                  Tags
+                </TableHead>
+                <TableHead className="font-semibold text-gray-700">
+                  Contact
+                </TableHead>
+                <TableHead className="font-semibold text-gray-700">
+                  Date
+                </TableHead>
+                <TableHead className="font-semibold text-gray-700">
+                  Status
+                </TableHead>
+                <TableHead className="font-semibold text-gray-700">
+                  Actions
+                </TableHead>
               </TableRow>
             </TableHeader>
             <TableBody>
               {filteredDocuments.map((doc) => (
-                <TableRow key={doc.id} className="border-gray-100 hover:bg-gray-50">
+                <TableRow
+                  key={doc.id}
+                  className="border-gray-100 hover:bg-gray-50"
+                >
                   <TableCell className="font-medium text-gray-900 max-w-xs">
                     <div className="flex items-center gap-2">
                       <span className="text-lg">{getTypeIcon(doc.type)}</span>
@@ -206,7 +228,11 @@ const DocumentLibrary = () => {
                   <TableCell>
                     <div className="flex flex-wrap gap-1">
                       {doc.tags.map((tag, index) => (
-                        <Badge key={index} variant="secondary" className="text-xs">
+                        <Badge
+                          key={index}
+                          variant="secondary"
+                          className="text-xs"
+                        >
                           {tag}
                         </Badge>
                       ))}

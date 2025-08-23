@@ -1,4 +1,3 @@
-
 import { Bell, User, Search } from "lucide-react";
 import { SidebarTrigger } from "@/components/ui/sidebar";
 import { Button } from "@/components/ui/button";
@@ -23,7 +22,7 @@ export function Header() {
           />
         </div>
       </div>
-      
+
       <div className="flex items-center gap-4">
         <Button variant="ghost" size="sm" className="relative">
           <Bell className="h-5 w-5" />
@@ -31,12 +30,16 @@ export function Header() {
             3
           </span>
         </Button>
-        
+
         <DropdownMenu>
           <DropdownMenuTrigger asChild>
-            <Button variant="ghost" size="sm" className="flex items-center gap-2">
+            <Button
+              variant="ghost"
+              size="sm"
+              className="flex items-center gap-2"
+            >
               <User className="h-5 w-5" />
-              <span className="hidden md:inline">John Doe</span>
+              <span className="hidden md:inline">Sarah Chen</span>
             </Button>
           </DropdownMenuTrigger>
           <DropdownMenuContent align="end">

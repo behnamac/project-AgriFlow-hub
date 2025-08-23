@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -14,16 +13,16 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import { 
-  FileText, 
-  CheckCircle, 
-  Edit, 
-  Flag, 
+import {
+  FileText,
+  CheckCircle,
+  Edit,
+  Flag,
   ArrowLeft,
   Building,
   Calendar,
   User,
-  Percent
+  Percent,
 } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 
@@ -37,10 +36,10 @@ const DocumentReview = () => {
   const [documentData, setDocumentData] = useState({
     name: "BOL-4832.pdf",
     type: "Bill of Lading",
-    shipper: "Interfood BV",
-    consignee: "Nestlé France",
+    shipper: "AgriFlow BV",
+    consignee: "FreshCo Markets",
     date: "2025-07-13",
-    vesselName: "MSC Olivia",
+    vesselName: "Harvest Star",
     portOfLoading: "Rotterdam",
     portOfDischarge: "Le Havre",
     confidence: {
@@ -48,7 +47,7 @@ const DocumentReview = () => {
       shipper: 92,
       consignee: 88,
       date: 97,
-    }
+    },
   });
 
   const handleApprove = () => {
@@ -91,7 +90,9 @@ const DocumentReview = () => {
         </Button>
         <div>
           <h1 className="text-3xl font-bold text-gray-900">Document Review</h1>
-          <p className="text-gray-600 mt-1">Review and validate document metadata</p>
+          <p className="text-gray-600 mt-1">
+            Review and validate document metadata
+          </p>
         </div>
       </div>
 
@@ -109,7 +110,9 @@ const DocumentReview = () => {
               <div className="text-center">
                 <FileText className="h-16 w-16 text-gray-400 mx-auto mb-4" />
                 <p className="text-gray-500 font-medium">{documentData.name}</p>
-                <p className="text-sm text-gray-400 mt-2">PDF preview would appear here</p>
+                <p className="text-sm text-gray-400 mt-2">
+                  PDF preview would appear here
+                </p>
                 <Button className="mt-4" variant="outline">
                   Open Full Document
                 </Button>
@@ -148,14 +151,20 @@ const DocumentReview = () => {
                     <SelectValue />
                   </SelectTrigger>
                   <SelectContent>
-                    <SelectItem value="Bill of Lading">Bill of Lading</SelectItem>
+                    <SelectItem value="Bill of Lading">
+                      Bill of Lading
+                    </SelectItem>
                     <SelectItem value="Invoice">Invoice</SelectItem>
                     <SelectItem value="Certificate">Certificate</SelectItem>
                     <SelectItem value="Packing List">Packing List</SelectItem>
                   </SelectContent>
                 </Select>
               ) : (
-                <Input value={documentData.type} readOnly className="bg-gray-50" />
+                <Input
+                  value={documentData.type}
+                  readOnly
+                  className="bg-gray-50"
+                />
               )}
             </div>
 
@@ -173,7 +182,9 @@ const DocumentReview = () => {
                 value={documentData.shipper}
                 readOnly={!isEditing}
                 className={isEditing ? "" : "bg-gray-50"}
-                onChange={(e) => setDocumentData({...documentData, shipper: e.target.value})}
+                onChange={(e) =>
+                  setDocumentData({ ...documentData, shipper: e.target.value })
+                }
               />
             </div>
 
@@ -191,7 +202,12 @@ const DocumentReview = () => {
                 value={documentData.consignee}
                 readOnly={!isEditing}
                 className={isEditing ? "" : "bg-gray-50"}
-                onChange={(e) => setDocumentData({...documentData, consignee: e.target.value})}
+                onChange={(e) =>
+                  setDocumentData({
+                    ...documentData,
+                    consignee: e.target.value,
+                  })
+                }
               />
             </div>
 
@@ -210,7 +226,9 @@ const DocumentReview = () => {
                 value={documentData.date}
                 readOnly={!isEditing}
                 className={isEditing ? "" : "bg-gray-50"}
-                onChange={(e) => setDocumentData({...documentData, date: e.target.value})}
+                onChange={(e) =>
+                  setDocumentData({ ...documentData, date: e.target.value })
+                }
               />
             </div>
 
@@ -222,7 +240,12 @@ const DocumentReview = () => {
                   value={documentData.vesselName}
                   readOnly={!isEditing}
                   className={isEditing ? "" : "bg-gray-50"}
-                  onChange={(e) => setDocumentData({...documentData, vesselName: e.target.value})}
+                  onChange={(e) =>
+                    setDocumentData({
+                      ...documentData,
+                      vesselName: e.target.value,
+                    })
+                  }
                 />
               </div>
               <div className="space-y-2">
@@ -231,7 +254,12 @@ const DocumentReview = () => {
                   value={documentData.portOfLoading}
                   readOnly={!isEditing}
                   className={isEditing ? "" : "bg-gray-50"}
-                  onChange={(e) => setDocumentData({...documentData, portOfLoading: e.target.value})}
+                  onChange={(e) =>
+                    setDocumentData({
+                      ...documentData,
+                      portOfLoading: e.target.value,
+                    })
+                  }
                 />
               </div>
               <div className="space-y-2">
@@ -240,7 +268,12 @@ const DocumentReview = () => {
                   value={documentData.portOfDischarge}
                   readOnly={!isEditing}
                   className={isEditing ? "" : "bg-gray-50"}
-                  onChange={(e) => setDocumentData({...documentData, portOfDischarge: e.target.value})}
+                  onChange={(e) =>
+                    setDocumentData({
+                      ...documentData,
+                      portOfDischarge: e.target.value,
+                    })
+                  }
                 />
               </div>
             </div>
@@ -257,7 +290,10 @@ const DocumentReview = () => {
 
             {/* Action Buttons */}
             <div className="flex gap-3 pt-4">
-              <Button onClick={handleApprove} className="flex-1 bg-green-600 hover:bg-green-700">
+              <Button
+                onClick={handleApprove}
+                className="flex-1 bg-green-600 hover:bg-green-700"
+              >
                 <CheckCircle className="h-4 w-4 mr-2" />
                 Approve
               </Button>
@@ -269,7 +305,11 @@ const DocumentReview = () => {
                 <Edit className="h-4 w-4 mr-2" />
                 {isEditing ? "Save Changes" : "Edit"}
               </Button>
-              <Button onClick={handleFlag} variant="destructive" className="flex-1">
+              <Button
+                onClick={handleFlag}
+                variant="destructive"
+                className="flex-1"
+              >
                 <Flag className="h-4 w-4 mr-2" />
                 Flag
               </Button>

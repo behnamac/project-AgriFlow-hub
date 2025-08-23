@@ -1,4 +1,3 @@
-
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import {
@@ -9,7 +8,13 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
-import { FileText, CheckCircle, Clock, AlertTriangle, TrendingUp } from "lucide-react";
+import {
+  FileText,
+  CheckCircle,
+  Clock,
+  AlertTriangle,
+  TrendingUp,
+} from "lucide-react";
 
 const statsData = [
   {
@@ -58,8 +63,8 @@ const recentActivity = [
     statusColor: "bg-yellow-100 text-yellow-700",
   },
   {
-    name: "Certificate_CO.pdf",
-    type: "Certificate",
+    name: "Organic_Cert.pdf",
+    type: "Organic Certificate",
     status: "Processed",
     date: "13 Jul 2025",
     statusColor: "bg-green-100 text-green-700",
@@ -72,8 +77,8 @@ const recentActivity = [
     statusColor: "bg-red-100 text-red-700",
   },
   {
-    name: "Customs_Declaration.pdf",
-    type: "Customs",
+    name: "Phyto_Cert.pdf",
+    type: "Phytosanitary Certificate",
     status: "Processed",
     date: "12 Jul 2025",
     statusColor: "bg-green-100 text-green-700",
@@ -86,19 +91,28 @@ const Dashboard = () => {
       <div className="flex items-center justify-between">
         <div>
           <h1 className="text-3xl font-bold text-gray-900">Dashboard</h1>
-          <p className="text-gray-600 mt-1">Welcome back, John. Here's your logistics overview.</p>
+          <p className="text-gray-600 mt-1">
+            Welcome back, Sarah. Here's your agricultural logistics overview.
+          </p>
         </div>
       </div>
 
       {/* Stats Cards */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
         {statsData.map((stat) => (
-          <Card key={stat.title} className="bg-white border border-gray-200 hover:shadow-md transition-shadow">
+          <Card
+            key={stat.title}
+            className="bg-white border border-gray-200 hover:shadow-md transition-shadow"
+          >
             <CardContent className="p-6">
               <div className="flex items-center justify-between">
                 <div>
-                  <p className="text-sm font-medium text-gray-600 mb-1">{stat.title}</p>
-                  <p className="text-3xl font-bold text-gray-900">{stat.value}</p>
+                  <p className="text-sm font-medium text-gray-600 mb-1">
+                    {stat.title}
+                  </p>
+                  <p className="text-3xl font-bold text-gray-900">
+                    {stat.value}
+                  </p>
                 </div>
                 <div className={`p-3 rounded-full ${stat.bgColor}`}>
                   <stat.icon className={`h-6 w-6 ${stat.color}`} />
@@ -121,16 +135,29 @@ const Dashboard = () => {
           <Table>
             <TableHeader>
               <TableRow className="border-gray-200">
-                <TableHead className="font-semibold text-gray-700">Document Name</TableHead>
-                <TableHead className="font-semibold text-gray-700">Type</TableHead>
-                <TableHead className="font-semibold text-gray-700">Status</TableHead>
-                <TableHead className="font-semibold text-gray-700">Date Received</TableHead>
+                <TableHead className="font-semibold text-gray-700">
+                  Document Name
+                </TableHead>
+                <TableHead className="font-semibold text-gray-700">
+                  Type
+                </TableHead>
+                <TableHead className="font-semibold text-gray-700">
+                  Status
+                </TableHead>
+                <TableHead className="font-semibold text-gray-700">
+                  Date Received
+                </TableHead>
               </TableRow>
             </TableHeader>
             <TableBody>
               {recentActivity.map((doc, index) => (
-                <TableRow key={index} className="border-gray-100 hover:bg-gray-50">
-                  <TableCell className="font-medium text-gray-900">{doc.name}</TableCell>
+                <TableRow
+                  key={index}
+                  className="border-gray-100 hover:bg-gray-50"
+                >
+                  <TableCell className="font-medium text-gray-900">
+                    {doc.name}
+                  </TableCell>
                   <TableCell className="text-gray-600">{doc.type}</TableCell>
                   <TableCell>
                     <Badge className={doc.statusColor}>{doc.status}</Badge>

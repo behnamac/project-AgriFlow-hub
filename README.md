@@ -1,8 +1,19 @@
-# Welcome to your Lovable project
+# AgriFlow Document Hub
 
 ## Project info
 
 **URL**: https://lovable.dev/projects/4b955190-d792-4d03-8538-e6e1f7cf0f79
+
+## About AgriFlow
+
+AgriFlow is a specialized agricultural logistics company that handles the transportation and documentation of agricultural products worldwide. Our document management system helps streamline the complex process of managing shipping documents, certifications, and compliance requirements for agricultural exports and imports.
+
+### Key Features:
+
+- **Agricultural Document Processing**: Handle bills of lading, invoices, packing lists, and specialized agricultural certificates
+- **Certification Management**: Manage organic, fair trade, phytosanitary, and other agricultural certifications
+- **Supply Chain Integration**: Connect with farmers, cooperatives, shipping companies, and international markets
+- **Compliance Tracking**: Ensure adherence to international agricultural trade regulations
 
 ## How can I edit this code?
 
