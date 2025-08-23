@@ -14,6 +14,7 @@
     "build:simple": "node scripts/build-simple.js",
     "build:webpack": "webpack --config webpack.config.cjs",
     "build:fallback": "node scripts/build-fallback.js",
+    "build:working": "node scripts/build-working.js",
     "lint": "eslint .",
     "preview": "vite preview"
   },

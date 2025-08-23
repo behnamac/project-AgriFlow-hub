@@ -1,5 +1,5 @@
 {
-  "buildCommand": "rm -rf node_modules package-lock.json && npm install --omit=optional && (npm run build:vercel || npm run build:simple || npm run build:webpack || npm run build:fallback)",
+  "buildCommand": "rm -rf node_modules package-lock.json && npm install --omit=optional && (npm run build:working || npm run build:vercel || npm run build:simple || npm run build:webpack || npm run build:fallback)",
   "outputDirectory": "dist",
   "framework": "vite",
   "installCommand": "npm install --omit=optional --no-optional",
