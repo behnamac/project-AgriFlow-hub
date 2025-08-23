@@ -1,14 +1,13 @@
-
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { SidebarProvider } from "@/components/ui/sidebar";
-import { AppSidebar } from "@/components/AppSidebar";
-import { Header } from "@/components/Header";
-import { ThemeProvider } from "@/contexts/ThemeContext";
-import Dashboard from "./pages/Dashboard";
+import { AppSidebarContainer } from "@/components/container/AppSidebarContainer";
+import { HeaderContainer } from "@/components/container/HeaderContainer";
+import { AppProvider } from "@/contexts/AppContext";
+import { DashboardContainer } from "@/components/container/DashboardContainer";
 import DocumentInbox from "./pages/DocumentInbox";
 import DocumentReview from "./pages/DocumentReview";
 import DocumentLibrary from "./pages/DocumentLibrary";
@@ -19,19 +18,19 @@ const queryClient = new QueryClient();
 
 const App = () => (
   <QueryClientProvider client={queryClient}>
-    <ThemeProvider>
+    <AppProvider>
       <TooltipProvider>
         <Toaster />
         <Sonner />
         <BrowserRouter>
           <SidebarProvider>
             <div className="min-h-screen flex w-full bg-gray-50 dark:bg-gray-900">
-              <AppSidebar />
+              <AppSidebarContainer />
               <div className="flex-1 flex flex-col">
-                <Header />
+                <HeaderContainer />
                 <main className="flex-1 p-4 sm:p-6">
                   <Routes>
-                    <Route path="/" element={<Dashboard />} />
+                    <Route path="/" element={<DashboardContainer />} />
                     <Route path="/inbox" element={<DocumentInbox />} />
                     <Route path="/review/:id" element={<DocumentReview />} />
                     <Route path="/library" element={<DocumentLibrary />} />
@@ -44,7 +43,7 @@ const App = () => (
           </SidebarProvider>
         </BrowserRouter>
       </TooltipProvider>
-    </ThemeProvider>
+    </AppProvider>
   </QueryClientProvider>
 );
 
