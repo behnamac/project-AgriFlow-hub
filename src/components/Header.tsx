@@ -16,7 +16,7 @@ export function Header() {
       <div className="flex items-center gap-2 sm:gap-4">
         <SidebarTrigger className="text-gray-600 hover:text-gray-900 dark:text-gray-300 dark:hover:text-white" />
         <div className="relative max-w-xs sm:max-w-md">
-          <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-gray-400" />
+          <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-gray-400 dark:text-gray-500" />
           <Input
             placeholder="Search documents..."
             className="pl-10 bg-gray-50 dark:bg-gray-700 border-gray-200 dark:border-gray-600 text-sm dark:text-white"

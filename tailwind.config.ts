@@ -2,6 +2,9 @@ import type { Config } from "tailwindcss";
 
 export default {
 	darkMode: ["class"],
+	daisyui: {
+		themes: ["light", "dark"],
+	},
 	content: [
 		"./pages/**/*.{ts,tsx}",
 		"./components/**/*.{ts,tsx}",

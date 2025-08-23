@@ -34,14 +34,14 @@ export function AppSidebar() {
     const isActive = location.pathname === path;
     return `flex items-center gap-3 px-3 py-2 rounded-lg transition-colors ${
       isActive
-        ? "bg-blue-100 text-blue-700 font-medium"
-        : "text-gray-700 hover:bg-gray-100"
+        ? "bg-blue-100 dark:bg-blue-900 text-blue-700 dark:text-blue-300 font-medium"
+        : "text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700"
     }`;
   };
 
   return (
     <Sidebar
-      className={`border-r border-gray-200 bg-white ${
+      className={`border-r border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 ${
         collapsed ? "w-16" : "w-64"
       }`}
     >
@@ -50,14 +50,14 @@ export function AppSidebar() {
           <Building2 className="h-6 w-6 sm:h-8 sm:w-8 text-green-600" />
           {!collapsed && (
             <div>
-              <h1 className="text-lg sm:text-xl font-bold text-gray-900">AgriFlow</h1>
-              <p className="text-xs sm:text-sm text-gray-500">Agricultural Logistics</p>
+                        <h1 className="text-lg sm:text-xl font-bold text-gray-900 dark:text-white">AgriFlow</h1>
+          <p className="text-xs sm:text-sm text-gray-500 dark:text-gray-400">Agricultural Logistics</p>
             </div>
           )}
         </div>
 
         <SidebarGroup>
-          <SidebarGroupLabel className="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-2">
+          <SidebarGroupLabel className="text-xs font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-wider mb-2">
             Navigation
           </SidebarGroupLabel>
           <SidebarGroupContent>

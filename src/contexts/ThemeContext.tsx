@@ -46,6 +46,9 @@ export const ThemeProvider: React.FC<ThemeProviderProps> = ({ children }) => {
     // Add current theme class
     root.classList.add(theme);
     
+    // Set data-theme attribute for DaisyUI
+    root.setAttribute('data-theme', theme);
+    
     // Save to localStorage
     localStorage.setItem('theme', theme);
   }, [theme]);
