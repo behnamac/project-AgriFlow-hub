@@ -22,8 +22,10 @@ import { Inbox, Filter, Download, Eye, Paperclip } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 
 import { emailData } from "@/data/documentInboxData";
+import { useTranslation } from "@/hooks/useTranslation";
 
 const DocumentInbox = () => {
+  const { t } = useTranslation();
   const [statusFilter, setStatusFilter] = useState("all");
   const [searchTerm, setSearchTerm] = useState("");
   const navigate = useNavigate();
@@ -47,10 +49,10 @@ const DocumentInbox = () => {
       <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
         <div>
           <h1 className="text-2xl sm:text-3xl font-bold text-gray-900 dark:text-white">
-            Document Inbox
+            {t("documentInbox.title")}
           </h1>
           <p className="text-gray-600 dark:text-gray-400 mt-1 text-sm sm:text-base">
-            Manage incoming email documents and attachments
+            {t("documentInbox.description")}
           </p>
         </div>
       </div>
@@ -61,7 +63,7 @@ const DocumentInbox = () => {
           <div className="flex flex-col sm:flex-row gap-4">
             <div className="flex-1">
               <Input
-                placeholder="Search by subject or sender..."
+                placeholder={t("common.searchBySubject")}
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
                 className="w-full sm:max-w-md"
@@ -71,14 +73,14 @@ const DocumentInbox = () => {
               <Select value={statusFilter} onValueChange={setStatusFilter}>
                 <SelectTrigger className="w-full sm:w-40">
                   <Filter className="h-4 w-4 mr-2" />
-                  <SelectValue placeholder="Status" />
+                  <SelectValue placeholder={t("dashboard.status")} />
                 </SelectTrigger>
                 <SelectContent>
-                  <SelectItem value="all">All Status</SelectItem>
-                  <SelectItem value="processed">Processed</SelectItem>
-                  <SelectItem value="pending">Pending</SelectItem>
-                  <SelectItem value="review">Review Required</SelectItem>
-                  <SelectItem value="error">Error</SelectItem>
+                  <SelectItem value="all">{t("common.allStatus")}</SelectItem>
+                  <SelectItem value="processed">{t("documentInbox.filters.processed")}</SelectItem>
+                  <SelectItem value="pending">{t("documentInbox.filters.pending")}</SelectItem>
+                  <SelectItem value="review">{t("documentInbox.filters.reviewRequired")}</SelectItem>
+                  <SelectItem value="error">{t("documentInbox.filters.error")}</SelectItem>
                 </SelectContent>
               </Select>
             </div>
@@ -91,7 +93,7 @@ const DocumentInbox = () => {
         <CardHeader>
           <CardTitle className="flex items-center gap-2">
             <Inbox className="h-5 w-5" />
-            Email Documents ({filteredEmails.length})
+            {t("documentInbox.emailDocuments")} ({filteredEmails.length})
           </CardTitle>
         </CardHeader>
         <CardContent className="overflow-x-auto">
@@ -99,22 +101,22 @@ const DocumentInbox = () => {
             <TableHeader>
               <TableRow className="border-gray-200 dark:border-gray-700">
                 <TableHead className="font-semibold text-gray-700 dark:text-gray-300">
-                  Email Subject
+                  {t("documentInbox.emailSubject")}
                 </TableHead>
                 <TableHead className="font-semibold text-gray-700 dark:text-gray-300 hidden sm:table-cell">
-                  Sender
+                  {t("documentInbox.sender")}
                 </TableHead>
                 <TableHead className="font-semibold text-gray-700 dark:text-gray-300">
-                  Attachments
+                  {t("documentInbox.attachments")}
                 </TableHead>
                 <TableHead className="font-semibold text-gray-700 dark:text-gray-300">
-                  Status
+                  {t("dashboard.status")}
                 </TableHead>
                 <TableHead className="font-semibold text-gray-700 dark:text-gray-300">
-                  Date
+                  {t("documentInbox.date")}
                 </TableHead>
                 <TableHead className="font-semibold text-gray-700 dark:text-gray-300">
-                  Actions
+                  {t("common.actions")}
                 </TableHead>
               </TableRow>
             </TableHeader>

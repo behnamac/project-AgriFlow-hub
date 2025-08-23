@@ -26,11 +26,13 @@ import {
 } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import { documentReviewData } from "@/data/documentReviewData";
+import { useTranslation } from "@/hooks/useTranslation";
 
 const DocumentReview = () => {
   const { id } = useParams();
   const navigate = useNavigate();
   const { toast } = useToast();
+  const { t } = useTranslation();
   const [isEditing, setIsEditing] = useState(false);
 
   // Mock document data based on ID
@@ -38,7 +40,7 @@ const DocumentReview = () => {
 
   const handleApprove = () => {
     toast({
-      title: "Document Approved",
+      title: t("documentReview.approve"),
       description: "The document has been successfully processed and archived.",
     });
     navigate("/inbox");
@@ -48,7 +50,7 @@ const DocumentReview = () => {
     setIsEditing(!isEditing);
     if (isEditing) {
       toast({
-        title: "Changes Saved",
+        title: t("common.save"),
         description: "Document metadata has been updated successfully.",
       });
     }
@@ -56,7 +58,7 @@ const DocumentReview = () => {
 
   const handleFlag = () => {
     toast({
-      title: "Document Flagged",
+      title: t("documentReview.flag"),
       description: "This document has been flagged for manual review.",
       variant: "destructive",
     });
@@ -72,14 +74,14 @@ const DocumentReview = () => {
           className="flex items-center gap-2 w-fit"
         >
           <ArrowLeft className="h-4 w-4" />
-          Back to Inbox
+          {t("documentReview.backToInbox")}
         </Button>
         <div>
           <h1 className="text-2xl sm:text-3xl font-bold text-gray-900 dark:text-white">
-            Document Review
+            {t("documentReview.title")}
           </h1>
           <p className="text-gray-600 dark:text-gray-400 mt-1 text-sm sm:text-base">
-            Review and validate document metadata
+            {t("documentReview.description")}
           </p>
         </div>
       </div>
@@ -90,7 +92,7 @@ const DocumentReview = () => {
           <CardHeader>
             <CardTitle className="flex items-center gap-2">
               <FileText className="h-5 w-5" />
-              Document Preview
+              {t("documentReview.documentPreview")}
             </CardTitle>
           </CardHeader>
           <CardContent>
@@ -101,10 +103,10 @@ const DocumentReview = () => {
                   {documentData.name}
                 </p>
                 <p className="text-sm text-gray-400 dark:text-gray-500 mt-2">
-                  PDF preview would appear here
+                  {t("documentReview.pdfPreview")}
                 </p>
                 <Button className="mt-4" variant="outline">
-                  Open Full Document
+                  {t("documentReview.openFullDocument")}
                 </Button>
               </div>
             </div>
@@ -117,10 +119,10 @@ const DocumentReview = () => {
             <CardTitle className="flex items-center justify-between">
               <span className="flex items-center gap-2">
                 <Edit className="h-5 w-5" />
-                Extracted Metadata
+                {t("documentReview.extractedMetadata")}
               </span>
               <Badge variant="outline" className="bg-blue-50 text-blue-700">
-                AI Processed
+                {t("documentReview.aiProcessed")}
               </Badge>
             </CardTitle>
           </CardHeader>
@@ -129,7 +131,7 @@ const DocumentReview = () => {
             <div className="space-y-2">
               <Label className="flex items-center gap-2">
                 <FileText className="h-4 w-4" />
-                Document Type
+                {t("documentReview.documentType")}
                 <Badge variant="secondary" className="ml-auto">
                   <Percent className="h-3 w-3 mr-1" />
                   {documentData.confidence.type}%

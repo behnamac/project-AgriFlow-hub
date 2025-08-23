@@ -10,17 +10,19 @@ import {
 } from "@/components/ui/table";
 import { FileText } from "lucide-react";
 import { statsData, recentActivity } from "@/data/dashboardData";
+import { useTranslation } from "@/hooks/useTranslation";
 
 const Dashboard = () => {
+  const { t } = useTranslation();
   return (
     <div className="space-y-4 sm:space-y-6">
       <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
         <div>
           <h1 className="text-2xl sm:text-3xl font-bold text-gray-900 dark:text-white">
-            Dashboard
+            {t("dashboard.title")}
           </h1>
           <p className="text-gray-600 dark:text-gray-400 mt-1 text-sm sm:text-base">
-            Welcome back, Sarah. Here's your agricultural logistics overview.
+            {t("dashboard.welcome")}
           </p>
         </div>
       </div>
@@ -58,7 +60,7 @@ const Dashboard = () => {
         <CardHeader>
           <CardTitle className="flex items-center gap-2">
             <FileText className="h-5 w-5" />
-            Recent Activity
+            {t("dashboard.recentActivity")}
           </CardTitle>
         </CardHeader>
         <CardContent className="overflow-x-auto">
@@ -66,16 +68,16 @@ const Dashboard = () => {
             <TableHeader>
               <TableRow className="border-gray-200 dark:border-gray-700">
                 <TableHead className="font-semibold text-gray-700 dark:text-gray-300">
-                  Document
+                  {t("dashboard.documentName")}
                 </TableHead>
                 <TableHead className="font-semibold text-gray-700 dark:text-gray-300 hidden sm:table-cell">
-                  Type
+                  {t("dashboard.type")}
                 </TableHead>
                 <TableHead className="font-semibold text-gray-700 dark:text-gray-300">
-                  Status
+                  {t("dashboard.status")}
                 </TableHead>
                 <TableHead className="font-semibold text-gray-700 dark:text-gray-300 hidden sm:table-cell">
-                  Date
+                  {t("dashboard.dateReceived")}
                 </TableHead>
               </TableRow>
             </TableHeader>

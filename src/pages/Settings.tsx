@@ -37,8 +37,10 @@ import {
 import { useToast } from "@/hooks/use-toast";
 
 import { tagsData } from "@/data/settingsData";
+import { useTranslation } from "@/hooks/useTranslation";
 
 const Settings = () => {
+  const { t } = useTranslation();
   const [newTag, setNewTag] = useState({
     name: "",
     type: "",
@@ -50,7 +52,7 @@ const Settings = () => {
   const handleAddTag = () => {
     if (!newTag.name || !newTag.type) {
       toast({
-        title: "Error",
+        title: t("common.error"),
         description: "Please fill in all required fields.",
         variant: "destructive",
       });
@@ -94,10 +96,10 @@ const Settings = () => {
       <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
         <div>
           <h1 className="text-2xl sm:text-3xl font-bold text-gray-900 dark:text-white">
-            Settings
+            {t("settings.title")}
           </h1>
           <p className="text-gray-600 dark:text-gray-400 mt-1 text-sm sm:text-base">
-            Manage tags and document classification settings
+            {t("settings.description")}
           </p>
         </div>
       </div>

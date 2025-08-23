@@ -21,8 +21,10 @@ import {
 import { Library, Search, Filter, Download, Eye, Building } from "lucide-react";
 
 import { documentsData } from "@/data/documentLibraryData";
+import { useTranslation } from "@/hooks/useTranslation";
 
 const DocumentLibrary = () => {
+  const { t } = useTranslation();
   const [searchTerm, setSearchTerm] = useState("");
   const [typeFilter, setTypeFilter] = useState("all");
   const [statusFilter, setStatusFilter] = useState("all");
@@ -65,10 +67,10 @@ const DocumentLibrary = () => {
       <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
         <div>
           <h1 className="text-2xl sm:text-3xl font-bold text-gray-900 dark:text-white">
-            Document Library
+            {t("documentLibrary.title")}
           </h1>
           <p className="text-gray-600 dark:text-gray-400 mt-1 text-sm sm:text-base">
-            Search and manage your archived documents
+            {t("documentLibrary.description")}
           </p>
         </div>
       </div>
@@ -80,7 +82,7 @@ const DocumentLibrary = () => {
             <div className="flex-1 relative">
               <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-gray-400" />
               <Input
-                placeholder="Search by filename, tag, or contact..."
+                placeholder={t("common.searchByFilename")}
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
                 className="pl-10"
@@ -90,27 +92,27 @@ const DocumentLibrary = () => {
               <Select value={typeFilter} onValueChange={setTypeFilter}>
                 <SelectTrigger className="w-full sm:w-48">
                   <Filter className="h-4 w-4 mr-2" />
-                  <SelectValue placeholder="Document Type" />
+                  <SelectValue placeholder={t("dashboard.type")} />
                 </SelectTrigger>
                 <SelectContent>
-                  <SelectItem value="all">All Types</SelectItem>
-                  <SelectItem value="Invoice">Invoice</SelectItem>
-                  <SelectItem value="Certificate">Certificate</SelectItem>
-                  <SelectItem value="Bill of Lading">Bill of Lading</SelectItem>
-                  <SelectItem value="Packing List">Packing List</SelectItem>
-                  <SelectItem value="Customs">Customs</SelectItem>
+                  <SelectItem value="all">{t("common.allTypes")}</SelectItem>
+                  <SelectItem value="Invoice">{t("documentTypes.invoice")}</SelectItem>
+                  <SelectItem value="Certificate">{t("documentTypes.certificate")}</SelectItem>
+                  <SelectItem value="Bill of Lading">{t("documentTypes.billOfLading")}</SelectItem>
+                  <SelectItem value="Packing List">{t("documentTypes.packingList")}</SelectItem>
+                                      <SelectItem value="Customs">{t("documentTypes.customs")}</SelectItem>
                 </SelectContent>
               </Select>
               <Select value={statusFilter} onValueChange={setStatusFilter}>
                 <SelectTrigger className="w-full sm:w-40">
-                  <SelectValue placeholder="Status" />
+                  <SelectValue placeholder={t("dashboard.status")} />
                 </SelectTrigger>
                 <SelectContent>
-                  <SelectItem value="all">All Status</SelectItem>
-                  <SelectItem value="approved">Approved</SelectItem>
-                  <SelectItem value="verified">Verified</SelectItem>
-                  <SelectItem value="processed">Processed</SelectItem>
-                  <SelectItem value="archived">Archived</SelectItem>
+                  <SelectItem value="all">{t("common.allStatus")}</SelectItem>
+                  <SelectItem value="approved">{t("documentLibrary.filters.approved")}</SelectItem>
+                  <SelectItem value="verified">{t("documentLibrary.filters.verified")}</SelectItem>
+                  <SelectItem value="processed">{t("documentLibrary.filters.processed")}</SelectItem>
+                  <SelectItem value="archived">{t("documentLibrary.filters.archived")}</SelectItem>
                 </SelectContent>
               </Select>
             </div>
@@ -123,7 +125,7 @@ const DocumentLibrary = () => {
         <CardHeader>
           <CardTitle className="flex items-center gap-2">
             <Library className="h-5 w-5" />
-            Document Archive ({filteredDocuments.length} documents)
+            {t("documentLibrary.documentArchive")} ({filteredDocuments.length} {t("settings.documents")})
           </CardTitle>
         </CardHeader>
         <CardContent className="overflow-x-auto">
@@ -131,25 +133,25 @@ const DocumentLibrary = () => {
             <TableHeader>
               <TableRow className="border-gray-200 dark:border-gray-700">
                 <TableHead className="font-semibold text-gray-700 dark:text-gray-300">
-                  Name
+                  {t("documentLibrary.name")}
                 </TableHead>
                 <TableHead className="font-semibold text-gray-700 dark:text-gray-300">
-                  Type
+                  {t("dashboard.type")}
                 </TableHead>
                 <TableHead className="font-semibold text-gray-700 dark:text-gray-300">
-                  Tags
+                  {t("documentLibrary.tags")}
                 </TableHead>
                 <TableHead className="font-semibold text-gray-700 dark:text-gray-300">
-                  Contact
+                  {t("documentLibrary.contact")}
                 </TableHead>
                 <TableHead className="font-semibold text-gray-700 dark:text-gray-300">
-                  Date
+                  {t("documentLibrary.date")}
                 </TableHead>
                 <TableHead className="font-semibold text-gray-700 dark:text-gray-300">
-                  Status
+                  {t("dashboard.status")}
                 </TableHead>
                 <TableHead className="font-semibold text-gray-700 dark:text-gray-300">
-                  Actions
+                  {t("common.actions")}
                 </TableHead>
               </TableRow>
             </TableHeader>
