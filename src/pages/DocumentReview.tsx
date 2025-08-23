@@ -144,11 +144,11 @@ const DocumentReview = () => {
                   </SelectTrigger>
                   <SelectContent>
                     <SelectItem value="Bill of Lading">
-                      Bill of Lading
+                      {t("documentTypes.billOfLading")}
                     </SelectItem>
-                    <SelectItem value="Invoice">Invoice</SelectItem>
-                    <SelectItem value="Certificate">Certificate</SelectItem>
-                    <SelectItem value="Packing List">Packing List</SelectItem>
+                    <SelectItem value="Invoice">{t("documentTypes.invoice")}</SelectItem>
+                    <SelectItem value="Certificate">{t("documentTypes.certificate")}</SelectItem>
+                    <SelectItem value="Packing List">{t("documentTypes.packingList")}</SelectItem>
                   </SelectContent>
                 </Select>
               ) : (
@@ -164,7 +164,7 @@ const DocumentReview = () => {
             <div className="space-y-2">
               <Label className="flex items-center gap-2">
                 <Building className="h-4 w-4" />
-                Shipper
+                {t("documentReview.shipper")}
                 <Badge variant="secondary" className="ml-auto">
                   <Percent className="h-3 w-3 mr-1" />
                   {documentData.confidence.shipper}%
@@ -186,7 +186,7 @@ const DocumentReview = () => {
             <div className="space-y-2">
               <Label className="flex items-center gap-2">
                 <User className="h-4 w-4" />
-                Consignee
+                {t("documentReview.consignee")}
                 <Badge variant="secondary" className="ml-auto">
                   <Percent className="h-3 w-3 mr-1" />
                   {documentData.confidence.consignee}%
@@ -211,7 +211,7 @@ const DocumentReview = () => {
             <div className="space-y-2">
               <Label className="flex items-center gap-2">
                 <Calendar className="h-4 w-4" />
-                Date
+                {t("documentReview.date")}
                 <Badge variant="secondary" className="ml-auto">
                   <Percent className="h-3 w-3 mr-1" />
                   {documentData.confidence.date}%
@@ -231,7 +231,7 @@ const DocumentReview = () => {
             {/* Additional Fields */}
             <div className="grid grid-cols-1 gap-4">
               <div className="space-y-2">
-                <Label>Vessel Name</Label>
+                <Label>{t("documentReview.vesselName")}</Label>
                 <Input
                   value={documentData.vesselName}
                   readOnly={!isEditing}
@@ -245,7 +245,7 @@ const DocumentReview = () => {
                 />
               </div>
               <div className="space-y-2">
-                <Label>Port of Loading</Label>
+                <Label>{t("documentReview.portOfLoading")}</Label>
                 <Input
                   value={documentData.portOfLoading}
                   readOnly={!isEditing}
@@ -259,7 +259,7 @@ const DocumentReview = () => {
                 />
               </div>
               <div className="space-y-2">
-                <Label>Port of Discharge</Label>
+                <Label>{t("documentReview.portOfDischarge")}</Label>
                 <Input
                   value={documentData.portOfDischarge}
                   readOnly={!isEditing}
@@ -276,9 +276,9 @@ const DocumentReview = () => {
 
             {/* Notes */}
             <div className="space-y-2">
-              <Label>Notes</Label>
+              <Label>{t("documentReview.notes")}</Label>
               <Textarea
-                placeholder="Add any additional notes or corrections..."
+                placeholder={t("documentReview.notesPlaceholder")}
                 className="resize-none"
                 rows={3}
               />
@@ -291,7 +291,7 @@ const DocumentReview = () => {
                 className="flex-1 bg-green-600 hover:bg-green-700"
               >
                 <CheckCircle className="h-4 w-4 mr-2" />
-                Approve
+                {t("documentReview.approve")}
               </Button>
               <Button
                 onClick={handleEdit}
@@ -299,7 +299,7 @@ const DocumentReview = () => {
                 className="flex-1"
               >
                 <Edit className="h-4 w-4 mr-2" />
-                {isEditing ? "Save Changes" : "Edit"}
+                {isEditing ? t("documentReview.saveChanges") : t("documentReview.edit")}
               </Button>
               <Button
                 onClick={handleFlag}
@@ -307,7 +307,7 @@ const DocumentReview = () => {
                 className="flex-1"
               >
                 <Flag className="h-4 w-4 mr-2" />
-                Flag
+                {t("documentReview.flag")}
               </Button>
             </div>
           </CardContent>

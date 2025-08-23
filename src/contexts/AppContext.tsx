@@ -23,11 +23,11 @@ export const AppProvider: React.FC<AppProviderProps> = ({ children }) => {
     if (savedTheme) {
       return savedTheme;
     }
-    
+
     if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
       return "dark";
     }
-    
+
     return DEFAULT_THEME;
   });
 
@@ -36,28 +36,28 @@ export const AppProvider: React.FC<AppProviderProps> = ({ children }) => {
     if (savedLanguage) {
       return savedLanguage;
     }
-    
+
     // Check browser language
     const browserLang = navigator.language.split("-")[0];
     if (browserLang === "nl") {
       return "nl";
     }
-    
+
     return DEFAULT_LANGUAGE;
   });
 
   useEffect(() => {
     const root = window.document.documentElement;
-    
+
     // Remove existing theme classes
     root.classList.remove("light", "dark");
-    
+
     // Add current theme class
     root.classList.add(theme);
-    
+
     // Set data-theme attribute for DaisyUI
     root.setAttribute("data-theme", theme);
-    
+
     // Save to localStorage
     localStorage.setItem("theme", theme);
   }, [theme]);
@@ -65,10 +65,10 @@ export const AppProvider: React.FC<AppProviderProps> = ({ children }) => {
   useEffect(() => {
     // Set language in i18n service
     i18n.setLanguage(language);
-    
+
     // Save to localStorage
     localStorage.setItem("language", language);
-    
+
     // Force a re-render by updating the document title (this is a simple way to trigger re-renders)
     document.title = `AgriFlow Document Hub - ${language.toUpperCase()}`;
   }, [language]);

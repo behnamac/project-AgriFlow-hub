@@ -95,7 +95,15 @@
     "flag": "Flag",
     "saveChanges": "Save Changes",
     "pdfPreview": "PDF preview would appear here",
-    "openFullDocument": "Open Full Document"
+    "openFullDocument": "Open Full Document",
+    "notes": "Notes",
+    "notesPlaceholder": "Add any additional notes or corrections...",
+    "edit": "Edit",
+    "tagAdded": "Tag Added",
+    "tagDeleted": "Tag Deleted",
+    "tagAddedSuccess": "Tag \"{name}\" has been added successfully.",
+    "tagDeletedSuccess": "Tag \"{name}\" has been removed.",
+    "fillRequiredFields": "Please fill in all required fields."
   },
   "settings": {
     "title": "Settings",

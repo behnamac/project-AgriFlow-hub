@@ -11,6 +11,7 @@ import {
 import { FileText } from "lucide-react";
 import { statsData, recentActivity } from "@/data/dashboardData";
 import { useTranslation } from "@/hooks/useTranslation";
+import { getResponsiveTableCellClasses } from "@/utils/translation";
 
 const Dashboard = () => {
   const { t } = useTranslation();
@@ -67,16 +68,16 @@ const Dashboard = () => {
           <Table>
             <TableHeader>
               <TableRow className="border-gray-200 dark:border-gray-700">
-                <TableHead className="font-semibold text-gray-700 dark:text-gray-300">
+                <TableHead className={getResponsiveTableCellClasses(true, false)}>
                   {t("dashboard.documentName")}
                 </TableHead>
-                <TableHead className="font-semibold text-gray-700 dark:text-gray-300 hidden sm:table-cell">
+                <TableHead className={getResponsiveTableCellClasses(true, true)}>
                   {t("dashboard.type")}
                 </TableHead>
-                <TableHead className="font-semibold text-gray-700 dark:text-gray-300">
+                <TableHead className={getResponsiveTableCellClasses(true, false)}>
                   {t("dashboard.status")}
                 </TableHead>
-                <TableHead className="font-semibold text-gray-700 dark:text-gray-300 hidden sm:table-cell">
+                <TableHead className={getResponsiveTableCellClasses(true, true)}>
                   {t("dashboard.dateReceived")}
                 </TableHead>
               </TableRow>

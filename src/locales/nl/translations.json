@@ -95,7 +95,15 @@
     "flag": "Markeren",
     "saveChanges": "Wijzigingen Opslaan",
     "pdfPreview": "PDF voorvertoning zou hier verschijnen",
-    "openFullDocument": "Volledig Document Openen"
+    "openFullDocument": "Volledig Document Openen",
+    "notes": "Notities",
+    "notesPlaceholder": "Voeg eventuele aanvullende notities of correcties toe...",
+    "edit": "Bewerken",
+    "tagAdded": "Tag Toegevoegd",
+    "tagDeleted": "Tag Verwijderd",
+    "tagAddedSuccess": "Tag \"{name}\" is succesvol toegevoegd.",
+    "tagDeletedSuccess": "Tag \"{name}\" is verwijderd.",
+    "fillRequiredFields": "Vul alle verplichte velden in."
   },
   "settings": {
     "title": "Instellingen",

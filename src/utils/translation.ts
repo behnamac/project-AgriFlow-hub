@@ -41,3 +41,20 @@ export const formatStatKey = (title: string): string => {
 export const formatNavigationKey = (title: string): string => {
   return title.toLowerCase().replace(/\s+/g, "");
 };
+
+/**
+ * Get responsive table cell classes
+ * @param isHeader - Whether this is a table header
+ * @param isHiddenOnMobile - Whether to hide on mobile
+ * @returns CSS classes for responsive table cells
+ */
+export const getResponsiveTableCellClasses = (
+  isHeader: boolean = false,
+  isHiddenOnMobile: boolean = false
+): string => {
+  const baseClasses = isHeader
+    ? "font-semibold text-gray-700 dark:text-gray-300"
+    : "text-gray-600 dark:text-gray-400";
+  
+  return isHiddenOnMobile ? `${baseClasses} hidden sm:table-cell` : baseClasses;
+};

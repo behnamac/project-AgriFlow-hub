@@ -53,15 +53,15 @@ const Settings = () => {
     if (!newTag.name || !newTag.type) {
       toast({
         title: t("common.error"),
-        description: "Please fill in all required fields.",
+        description: t("documentReview.fillRequiredFields"),
         variant: "destructive",
       });
       return;
     }
 
     toast({
-      title: "Tag Added",
-      description: `Tag "${newTag.name}" has been added successfully.`,
+      title: t("documentReview.tagAdded"),
+      description: t("documentReview.tagAddedSuccess").replace("{name}", newTag.name),
     });
 
     setNewTag({ name: "", type: "", description: "" });
@@ -70,8 +70,8 @@ const Settings = () => {
 
   const handleDeleteTag = (tagName: string) => {
     toast({
-      title: "Tag Deleted",
-      description: `Tag "${tagName}" has been removed.`,
+      title: t("documentReview.tagDeleted"),
+      description: t("documentReview.tagDeletedSuccess").replace("{name}", tagName),
       variant: "destructive",
     });
   };
@@ -191,19 +191,19 @@ const Settings = () => {
             <TableHeader>
               <TableRow className="border-gray-200 dark:border-gray-700">
                 <TableHead className="font-semibold text-gray-700 dark:text-gray-300">
-                  Tag Name
+                  {t("settings.tagName")}
                 </TableHead>
                 <TableHead className="font-semibold text-gray-700 dark:text-gray-300">
-                  Type
+                  {t("settings.tagType")}
                 </TableHead>
                 <TableHead className="font-semibold text-gray-700 dark:text-gray-300">
-                  Usage Count
+                  {t("settings.usageCount")}
                 </TableHead>
                 <TableHead className="font-semibold text-gray-700 dark:text-gray-300">
-                  Description
+                  {t("settings.tagDescription")}
                 </TableHead>
                 <TableHead className="font-semibold text-gray-700 dark:text-gray-300">
-                  Actions
+                  {t("common.actions")}
                 </TableHead>
               </TableRow>
             </TableHeader>
@@ -224,7 +224,7 @@ const Settings = () => {
                     </Badge>
                   </TableCell>
                   <TableCell className="text-gray-600 dark:text-gray-400">
-                    <span className="font-medium">{tag.usage}</span> documents
+                    <span className="font-medium">{tag.usage}</span> {t("settings.documents")}
                   </TableCell>
                   <TableCell className="text-gray-600 dark:text-gray-400 max-w-xs truncate">
                     {tag.description}
@@ -256,19 +256,19 @@ const Settings = () => {
         <CardHeader>
           <CardTitle className="flex items-center gap-2">
             <SettingsIcon className="h-5 w-5" />
-            System Configuration
+            {t("settings.systemConfiguration")}
           </CardTitle>
         </CardHeader>
         <CardContent className="space-y-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
             <div className="space-y-4">
               <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
-                Auto-Classification
+                {t("settings.autoClassification")}
               </h3>
               <div className="space-y-3">
                 <div className="flex items-center justify-between p-3 bg-gray-50 dark:bg-gray-700 rounded-lg">
                   <span className="text-sm font-medium dark:text-gray-300">
-                    Minimum Confidence Threshold
+                    {t("settings.minimumConfidenceThreshold")}
                   </span>
                   <span className="text-sm text-gray-600 dark:text-gray-400">
                     85%
@@ -276,15 +276,15 @@ const Settings = () => {
                 </div>
                 <div className="flex items-center justify-between p-3 bg-gray-50 dark:bg-gray-700 rounded-lg">
                   <span className="text-sm font-medium dark:text-gray-300">
-                    Auto-approve High Confidence
+                    {t("settings.autoApproveHighConfidence")}
                   </span>
-                  <span className="text-sm text-green-600">Enabled</span>
+                  <span className="text-sm text-green-600">{t("settings.enabled")}</span>
                 </div>
                 <div className="flex items-center justify-between p-3 bg-gray-50 dark:bg-gray-700 rounded-lg">
                   <span className="text-sm font-medium dark:text-gray-300">
-                    Flag Low Confidence
+                    {t("settings.flagLowConfidence")}
                   </span>
-                  <span className="text-sm text-yellow-600">Below 70%</span>
+                  <span className="text-sm text-yellow-600">{t("settings.below70")}</span>
                 </div>
               </div>
             </div>
