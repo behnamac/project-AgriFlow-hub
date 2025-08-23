@@ -10,7 +10,7 @@
     "dev": "vite",
     "build": "vite build",
     "build:dev": "vite build --mode development",
-    "build:vercel": "DISABLE_ROLLUP_NATIVE=true vite build",
+    "build:vercel": "node scripts/build-vercel.js",
     "lint": "eslint .",
     "preview": "vite preview"
   },
