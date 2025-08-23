@@ -92,7 +92,9 @@ const DocumentInbox = () => {
     <div className="space-y-4 sm:space-y-6">
       <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
         <div>
-          <h1 className="text-2xl sm:text-3xl font-bold text-gray-900">Document Inbox</h1>
+          <h1 className="text-2xl sm:text-3xl font-bold text-gray-900">
+            Document Inbox
+          </h1>
           <p className="text-gray-600 mt-1 text-sm sm:text-base">
             Manage incoming email documents and attachments
           </p>
@@ -142,12 +144,12 @@ const DocumentInbox = () => {
           <Table>
             <TableHeader>
               <TableRow className="border-gray-200">
-                                  <TableHead className="font-semibold text-gray-700">
-                    Email Subject
-                  </TableHead>
-                  <TableHead className="font-semibold text-gray-700 hidden sm:table-cell">
-                    Sender
-                  </TableHead>
+                <TableHead className="font-semibold text-gray-700">
+                  Email Subject
+                </TableHead>
+                <TableHead className="font-semibold text-gray-700 hidden sm:table-cell">
+                  Sender
+                </TableHead>
                 <TableHead className="font-semibold text-gray-700">
                   Attachments
                 </TableHead>
@@ -171,7 +173,9 @@ const DocumentInbox = () => {
                   <TableCell className="font-medium text-gray-900 max-w-xs truncate">
                     <div className="flex flex-col">
                       <span className="truncate">{email.subject}</span>
-                      <span className="text-xs text-gray-500 sm:hidden">{email.sender}</span>
+                      <span className="text-xs text-gray-500 sm:hidden">
+                        {email.sender}
+                      </span>
                     </div>
                   </TableCell>
                   <TableCell className="text-gray-600 hidden sm:table-cell">

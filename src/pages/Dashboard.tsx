@@ -90,7 +90,9 @@ const Dashboard = () => {
     <div className="space-y-4 sm:space-y-6">
       <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
         <div>
-          <h1 className="text-2xl sm:text-3xl font-bold text-gray-900">Dashboard</h1>
+          <h1 className="text-2xl sm:text-3xl font-bold text-gray-900">
+            Dashboard
+          </h1>
           <p className="text-gray-600 mt-1 text-sm sm:text-base">
             Welcome back, Sarah. Here's your agricultural logistics overview.
           </p>
@@ -115,7 +117,9 @@ const Dashboard = () => {
                   </p>
                 </div>
                 <div className={`p-2 sm:p-3 rounded-full ${stat.bgColor}`}>
-                  <stat.icon className={`h-5 w-5 sm:h-6 sm:w-6 ${stat.color}`} />
+                  <stat.icon
+                    className={`h-5 w-5 sm:h-6 sm:w-6 ${stat.color}`}
+                  />
                 </div>
               </div>
             </CardContent>
@@ -135,18 +139,18 @@ const Dashboard = () => {
           <Table>
             <TableHeader>
               <TableRow className="border-gray-200">
-                                  <TableHead className="font-semibold text-gray-700">
-                    Document
-                  </TableHead>
-                  <TableHead className="font-semibold text-gray-700 hidden sm:table-cell">
-                    Type
-                  </TableHead>
-                  <TableHead className="font-semibold text-gray-700">
-                    Status
-                  </TableHead>
-                  <TableHead className="font-semibold text-gray-700 hidden sm:table-cell">
-                    Date
-                  </TableHead>
+                <TableHead className="font-semibold text-gray-700">
+                  Document
+                </TableHead>
+                <TableHead className="font-semibold text-gray-700 hidden sm:table-cell">
+                  Type
+                </TableHead>
+                <TableHead className="font-semibold text-gray-700">
+                  Status
+                </TableHead>
+                <TableHead className="font-semibold text-gray-700 hidden sm:table-cell">
+                  Date
+                </TableHead>
               </TableRow>
             </TableHeader>
             <TableBody>
@@ -158,14 +162,20 @@ const Dashboard = () => {
                   <TableCell className="font-medium text-gray-900">
                     <div className="flex flex-col">
                       <span className="truncate">{doc.name}</span>
-                      <span className="text-xs text-gray-500 sm:hidden">{doc.type}</span>
+                      <span className="text-xs text-gray-500 sm:hidden">
+                        {doc.type}
+                      </span>
                     </div>
                   </TableCell>
-                  <TableCell className="text-gray-600 hidden sm:table-cell">{doc.type}</TableCell>
+                  <TableCell className="text-gray-600 hidden sm:table-cell">
+                    {doc.type}
+                  </TableCell>
                   <TableCell>
                     <Badge className={doc.statusColor}>{doc.status}</Badge>
                   </TableCell>
-                  <TableCell className="text-gray-600 hidden sm:table-cell">{doc.date}</TableCell>
+                  <TableCell className="text-gray-600 hidden sm:table-cell">
+                    {doc.date}
+                  </TableCell>
                 </TableRow>
               ))}
             </TableBody>
