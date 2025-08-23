@@ -31,7 +31,17 @@ try {
 
   // Build the main application bundle
   execSync(
-    "npx esbuild src/main.tsx --bundle --outfile=dist/assets/index.js --format=esm --target=es2020 --minify --loader:.css=css --loader:.tsx=tsx --loader:.ts=ts --jsx=automatic --jsx-import-source=react",
+    "npx esbuild src/main.tsx --bundle --outfile=dist/assets/index.js --format=esm --target=es2020 --minify --loader:.css=css --loader:.tsx=tsx --loader:.ts=ts --jsx=automatic --jsx-import-source=react --external:react --external:react-dom",
+    {
+      stdio: "inherit",
+    }
+  );
+
+  console.log("🎨 Building CSS with Tailwind...");
+
+  // Build CSS separately with Tailwind processing
+  execSync(
+    "npx tailwindcss -i ./src/index.css -o ./dist/assets/index.css --minify",
     {
       stdio: "inherit",
     }
@@ -42,10 +52,16 @@ try {
   // Read the original index.html to get the proper structure
   const originalHtml = readFileSync("index.html", "utf-8");
 
-  // Update the script source to point to our built file
-  const updatedHtml = originalHtml.replace(
+  // Update the script source to point to our built file and add CSS
+  let updatedHtml = originalHtml.replace(
     /<script type="module" src="[^"]*"><\/script>/,
     '<script type="module" src="./assets/index.js"></script>'
+  );
+
+  // Add CSS link in the head
+  updatedHtml = updatedHtml.replace(
+    /<title>([^<]*)<\/title>/,
+    '<title>$1</title>\n    <link rel="stylesheet" href="./assets/index.css">'
   );
 
   writeFileSync(join("dist", "index.html"), updatedHtml);
