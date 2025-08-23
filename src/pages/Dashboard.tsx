@@ -87,35 +87,35 @@ const recentActivity = [
 
 const Dashboard = () => {
   return (
-    <div className="space-y-6">
-      <div className="flex items-center justify-between">
+    <div className="space-y-4 sm:space-y-6">
+      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
         <div>
-          <h1 className="text-3xl font-bold text-gray-900">Dashboard</h1>
-          <p className="text-gray-600 mt-1">
+          <h1 className="text-2xl sm:text-3xl font-bold text-gray-900">Dashboard</h1>
+          <p className="text-gray-600 mt-1 text-sm sm:text-base">
             Welcome back, Sarah. Here's your agricultural logistics overview.
           </p>
         </div>
       </div>
 
       {/* Stats Cards */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-6">
         {statsData.map((stat) => (
           <Card
             key={stat.title}
             className="bg-white border border-gray-200 hover:shadow-md transition-shadow"
           >
-            <CardContent className="p-6">
+            <CardContent className="p-4 sm:p-6">
               <div className="flex items-center justify-between">
                 <div>
-                  <p className="text-sm font-medium text-gray-600 mb-1">
+                  <p className="text-xs sm:text-sm font-medium text-gray-600 mb-1">
                     {stat.title}
                   </p>
-                  <p className="text-3xl font-bold text-gray-900">
+                  <p className="text-xl sm:text-3xl font-bold text-gray-900">
                     {stat.value}
                   </p>
                 </div>
-                <div className={`p-3 rounded-full ${stat.bgColor}`}>
-                  <stat.icon className={`h-6 w-6 ${stat.color}`} />
+                <div className={`p-2 sm:p-3 rounded-full ${stat.bgColor}`}>
+                  <stat.icon className={`h-5 w-5 sm:h-6 sm:w-6 ${stat.color}`} />
                 </div>
               </div>
             </CardContent>
@@ -131,22 +131,22 @@ const Dashboard = () => {
             Recent Activity
           </CardTitle>
         </CardHeader>
-        <CardContent>
+        <CardContent className="overflow-x-auto">
           <Table>
             <TableHeader>
               <TableRow className="border-gray-200">
-                <TableHead className="font-semibold text-gray-700">
-                  Document Name
-                </TableHead>
-                <TableHead className="font-semibold text-gray-700">
-                  Type
-                </TableHead>
-                <TableHead className="font-semibold text-gray-700">
-                  Status
-                </TableHead>
-                <TableHead className="font-semibold text-gray-700">
-                  Date Received
-                </TableHead>
+                                  <TableHead className="font-semibold text-gray-700">
+                    Document
+                  </TableHead>
+                  <TableHead className="font-semibold text-gray-700 hidden sm:table-cell">
+                    Type
+                  </TableHead>
+                  <TableHead className="font-semibold text-gray-700">
+                    Status
+                  </TableHead>
+                  <TableHead className="font-semibold text-gray-700 hidden sm:table-cell">
+                    Date
+                  </TableHead>
               </TableRow>
             </TableHeader>
             <TableBody>
@@ -156,13 +156,16 @@ const Dashboard = () => {
                   className="border-gray-100 hover:bg-gray-50"
                 >
                   <TableCell className="font-medium text-gray-900">
-                    {doc.name}
+                    <div className="flex flex-col">
+                      <span className="truncate">{doc.name}</span>
+                      <span className="text-xs text-gray-500 sm:hidden">{doc.type}</span>
+                    </div>
                   </TableCell>
-                  <TableCell className="text-gray-600">{doc.type}</TableCell>
+                  <TableCell className="text-gray-600 hidden sm:table-cell">{doc.type}</TableCell>
                   <TableCell>
                     <Badge className={doc.statusColor}>{doc.status}</Badge>
                   </TableCell>
-                  <TableCell className="text-gray-600">{doc.date}</TableCell>
+                  <TableCell className="text-gray-600 hidden sm:table-cell">{doc.date}</TableCell>
                 </TableRow>
               ))}
             </TableBody>

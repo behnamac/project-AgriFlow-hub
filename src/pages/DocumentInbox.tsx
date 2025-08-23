@@ -89,11 +89,11 @@ const DocumentInbox = () => {
   };
 
   return (
-    <div className="space-y-6">
-      <div className="flex items-center justify-between">
+    <div className="space-y-4 sm:space-y-6">
+      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
         <div>
-          <h1 className="text-3xl font-bold text-gray-900">Document Inbox</h1>
-          <p className="text-gray-600 mt-1">
+          <h1 className="text-2xl sm:text-3xl font-bold text-gray-900">Document Inbox</h1>
+          <p className="text-gray-600 mt-1 text-sm sm:text-base">
             Manage incoming email documents and attachments
           </p>
         </div>
@@ -108,12 +108,12 @@ const DocumentInbox = () => {
                 placeholder="Search by subject or sender..."
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
-                className="max-w-md"
+                className="w-full sm:max-w-md"
               />
             </div>
             <div className="flex gap-2">
               <Select value={statusFilter} onValueChange={setStatusFilter}>
-                <SelectTrigger className="w-40">
+                <SelectTrigger className="w-full sm:w-40">
                   <Filter className="h-4 w-4 mr-2" />
                   <SelectValue placeholder="Status" />
                 </SelectTrigger>
@@ -138,16 +138,16 @@ const DocumentInbox = () => {
             Email Documents ({filteredEmails.length})
           </CardTitle>
         </CardHeader>
-        <CardContent>
+        <CardContent className="overflow-x-auto">
           <Table>
             <TableHeader>
               <TableRow className="border-gray-200">
-                <TableHead className="font-semibold text-gray-700">
-                  Email Subject
-                </TableHead>
-                <TableHead className="font-semibold text-gray-700">
-                  Sender
-                </TableHead>
+                                  <TableHead className="font-semibold text-gray-700">
+                    Email Subject
+                  </TableHead>
+                  <TableHead className="font-semibold text-gray-700 hidden sm:table-cell">
+                    Sender
+                  </TableHead>
                 <TableHead className="font-semibold text-gray-700">
                   Attachments
                 </TableHead>
@@ -169,9 +169,12 @@ const DocumentInbox = () => {
                   className="border-gray-100 hover:bg-gray-50"
                 >
                   <TableCell className="font-medium text-gray-900 max-w-xs truncate">
-                    {email.subject}
+                    <div className="flex flex-col">
+                      <span className="truncate">{email.subject}</span>
+                      <span className="text-xs text-gray-500 sm:hidden">{email.sender}</span>
+                    </div>
                   </TableCell>
-                  <TableCell className="text-gray-600">
+                  <TableCell className="text-gray-600 hidden sm:table-cell">
                     {email.sender}
                   </TableCell>
                   <TableCell>
@@ -182,7 +185,7 @@ const DocumentInbox = () => {
                         {email.attachments.length > 1 ? "s" : ""}
                       </span>
                     </div>
-                    <div className="text-xs text-gray-500 mt-1">
+                    <div className="text-xs text-gray-500 mt-1 hidden sm:block">
                       {email.attachments.join(", ")}
                     </div>
                   </TableCell>
