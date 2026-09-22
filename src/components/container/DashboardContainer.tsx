@@ -43,7 +43,7 @@ export const DashboardContainer: React.FC = () => {
                     {t(
                       `dashboard.stats.${stat.title
                         .toLowerCase()
-                        .replace(/\s+/g, "")}`
+                        .replace(/[^a-z0-9]/g, "")}`
                     )}
                   </p>
                   <p className="text-xl sm:text-3xl font-bold text-gray-900 dark:text-white">
